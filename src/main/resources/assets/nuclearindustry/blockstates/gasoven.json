@@ -1,0 +1,23 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "nuclearindustry:block/gasoven",
+      "y": 90
+
+    },
+    "facing=south": {
+      "model": "nuclearindustry:block/gasoven",
+      "y": 270
+
+    },
+    "facing=west": {
+      "model": "nuclearindustry:block/gasoven"
+
+    },
+    "facing=east": {
+      "model": "nuclearindustry:block/gasoven",
+      "y": 180
+
+    }
+  }
+}

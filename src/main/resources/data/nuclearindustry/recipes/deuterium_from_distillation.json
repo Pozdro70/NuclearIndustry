@@ -1,0 +1,19 @@
+{
+  "type": "nuclearindustry:distillation",
+  "ingredients": [
+    {
+      "item": "nuclearindustry:nothing"
+    }
+  ],
+  "fluidIN": {
+    "FluidName": "nuclearindustry:heavywater_fluid",
+    "Amount": 1600
+  },
+  "fluidOUT": {
+    "FluidName": "nuclearindustry:deuterium_fluid",
+    "Amount": 1000
+  },
+  "output": {
+    "item": "nuclearindustry:nothing"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "spodumene",
+  "ingredient": {
+    "item": "nuclearindustry:raw_spodumene"
+  },
+  "result": "nuclearindustry:spodumene"
+}

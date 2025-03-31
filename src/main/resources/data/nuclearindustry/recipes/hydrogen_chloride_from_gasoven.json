@@ -1,0 +1,23 @@
+{
+  "type": "nuclearindustry:gasoven",
+  "ingredients": [
+    {
+      "item": "nuclearindustry:nothing"
+    }
+  ],
+  "fluidIN": {
+    "FluidName": "nuclearindustry:hydrogen_fluid",
+    "Amount": 1600
+  },
+  "fluidIN2": {
+    "FluidName": "nuclearindustry:hydrogen_fluid",
+    "Amount": 1600
+  },
+  "fluidOUT": {
+    "FluidName": "nuclearindustry:hydrogenchloride_fluid",
+    "Amount": 800
+  },
+  "output": {
+    "item": "nuclearindustry:nothing"
+  }
+}

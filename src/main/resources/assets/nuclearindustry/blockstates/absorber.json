@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "nuclearindustry:block/absorber"
+    },
+    "facing=south": {
+      "model": "nuclearindustry:block/absorber",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "nuclearindustry:block/absorber",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "nuclearindustry:block/absorber",
+      "y": 90
+    }
+  }
+}

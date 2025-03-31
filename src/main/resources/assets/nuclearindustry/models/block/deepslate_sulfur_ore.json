@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "nuclearindustry:block/ore/deepslate_sulfur_ore"
+  }
+}

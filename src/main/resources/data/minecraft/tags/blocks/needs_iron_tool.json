@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "nuclearindustry:copper_coil",
+    "nuclearindustry:machine_hull",
+    "nuclearindustry:thermal_isolator",
+    "nuclearindustry:elechamber",
+    "nuclearindustry:still",
+    "nuclearindustry:absorber",
+    "nuclearindustry:gasoven",
+    "nuclearindustry:spodumene_ore",
+    "nuclearindustry:deepslate_spodumene_ore",
+    "nuclearindustry:sulfur_ore"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type": "nuclearindustry:distillation",
+  "ingredients": [
+    {
+      "item": "nuclearindustry:nothing"
+    }
+  ],
+  "fluidIN": {
+    "FluidName": "minecraft:water",
+    "Amount": 1000
+  },
+  "fluidOUT": {
+    "FluidName": "minecraft:water",
+    "Amount": 300
+  },
+  "output": {
+    "item": "nuclearindustry:salt"
+  }
+}

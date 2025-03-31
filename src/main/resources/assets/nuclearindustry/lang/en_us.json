@@ -1,0 +1,39 @@
+{
+  "item.nuclearindustry.steel": "Steel ingot",
+  "item.nuclearindustry.salt": "Salt",
+  "item.nuclearindustry.sulfur": "Sulfur",
+  "item.nuclearindustry.spodumene": "Spodumene",
+  "item.nuclearindustry.raw_spodumene": "Raw Spodumene",
+  "item.nuclearindustry.sodium_hydroxide": "Sodium hydroxide",
+  "item.nuclearindustry.nothing": "Nothing",
+  "item.nuclearindustry.filter_upgrade": "Filter Upgrade",
+  "item.nuclearindustry.deuterium_bucket": "'Bucket' of Deuterium",
+  "item.nuclearindustry.tritium_bucket": "'Bucket' of Tritium",
+  "item.nuclearindustry.heavywater_bucket": "Bucket of Heavy Water",
+  "item.nuclearindustry.purifiedwater_bucket": "Bucket of Purified Water",
+  "item.nuclearindustry.hydrogen_bucket": "'Bucket' of Hydrogen",
+  "item.nuclearindustry.hydrogenchloride_bucket": "'Bucket' of Hydrogen-chloride",
+  "item.nuclearindustry.chloride_bucket": "'Bucket' of Chloride",
+  "item.nuclearindustry.hydrochloricacid_bucket": "'Bucket' of Hydrochloric Acid",
+
+  "block.nuclearindustry.thermal_isolator": "Thermal Isolator",
+  "block.nuclearindustry.copper_coil": "Copper Coil",
+  "block.nuclearindustry.machine_hull": "Machine Hull",
+  "block.nuclearindustry.spodumene_ore": "Stone Spodumene Ore",
+  "block.nuclearindustry.sulfur_ore": "Stone Sulfur Ore",
+  "block.nuclearindustry.deepslate_spodumene_ore": "Deepslate Spodumene Ore",
+  "block.nuclearindustry.deepslate_sulfur_ore": "Deepslate Sulfur Ore",
+  "block.nuclearindustry.elechamber": "Electrolysis Chamber",
+  "block.nuclearindustry.still": "Still",
+
+  "fluid_type.nuclearindustry.heavywater_fluid":"Heavy Water",
+  "fluid_type.nuclearindustry.deuterium_fluid":"Deuterium",
+  "fluid_type.nuclearindustry.tritium_fluid":"Tritium",
+  "fluid_type.nuclearindustry.hydrogen_fluid":"Hydrogen",
+  "fluid_type.nuclearindustry.chloride_fluid":"Chloride",
+
+  "itemGroup.main": "NuclearIndustry - Main",
+
+  "nuclearindustry.tooltip.liquid.amount.with.capacity": "%s / %s mB",
+  "nuclearindustry.tooltip.liquid.amount": "%s mB"
+}

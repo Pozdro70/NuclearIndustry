@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "nuclearindustry:block/elechamber"
+    },
+    "facing=south": {
+      "model": "nuclearindustry:block/elechamber",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "nuclearindustry:block/elechamber",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "nuclearindustry:block/elechamber",
+      "y": 90
+    }
+  }
+}

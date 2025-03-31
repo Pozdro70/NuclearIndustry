@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "nuclearindustry:block/copper_coil/copper_coil_rod",
+    "up": "nuclearindustry:block/copper_coil/copper_coil_rod",
+    "north": "nuclearindustry:block/copper_coil/copper_coil_side",
+    "east": "nuclearindustry:block/copper_coil/copper_coil_side",
+    "south": "nuclearindustry:block/copper_coil/copper_coil_side",
+    "west": "nuclearindustry:block/copper_coil/copper_coil_side",
+    "particle": "nuclearindustry:block/copper_coil/copper_coil_side"
+  }
+}

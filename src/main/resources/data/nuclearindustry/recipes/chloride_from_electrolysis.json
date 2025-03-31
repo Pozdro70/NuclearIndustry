@@ -1,0 +1,19 @@
+{
+  "type": "nuclearindustry:electrolysis",
+  "ingredients": [
+    {
+      "item": "nuclearindustry:salt"
+    }
+  ],
+  "fluidIN": {
+    "FluidName": "minecraft:water",
+    "Amount": 1600
+  },
+  "fluidOUT": {
+    "FluidName": "nuclearindustry:chloride_fluid",
+    "Amount": 800
+  },
+  "output": {
+    "item": "nuclearindustry:nothing"
+  }
+}
