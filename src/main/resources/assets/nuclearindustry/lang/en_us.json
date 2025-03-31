@@ -25,12 +25,17 @@
   "block.nuclearindustry.deepslate_sulfur_ore": "Deepslate Sulfur Ore",
   "block.nuclearindustry.elechamber": "Electrolysis Chamber",
   "block.nuclearindustry.still": "Still",
+  "block.nuclearindustry.gasoven": "Gas Oven",
+  "block.nuclearindustry.absorber": "Absorber",
 
   "fluid_type.nuclearindustry.heavywater_fluid":"Heavy Water",
+  "fluid_type.nuclearindustry.purifiedwater_fluid":"Purified Water",
   "fluid_type.nuclearindustry.deuterium_fluid":"Deuterium",
   "fluid_type.nuclearindustry.tritium_fluid":"Tritium",
   "fluid_type.nuclearindustry.hydrogen_fluid":"Hydrogen",
   "fluid_type.nuclearindustry.chloride_fluid":"Chloride",
+  "fluid_type.nuclearindustry.hydrogenchloride_fluid":"Hydrogen Chloride",
+  "fluid_type.nuclearindustry.hydrochloricacid_fluid":"Hydrochloric Acid",
 
   "itemGroup.main": "NuclearIndustry - Main",
 
