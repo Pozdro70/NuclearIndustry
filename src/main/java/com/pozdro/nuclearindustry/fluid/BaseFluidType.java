@@ -18,6 +18,8 @@ import com.pozdro.nuclearindustry.fluid.hydrogenchloride.ModFluidHydrogenChlorid
 import com.pozdro.nuclearindustry.fluid.hydrogenchloride.ModFluidsHydrogenChloride;
 import com.pozdro.nuclearindustry.fluid.purifiedwater.ModFluidPurifiedWater;
 import com.pozdro.nuclearindustry.fluid.purifiedwater.ModFluidsPurifiedWater;
+import com.pozdro.nuclearindustry.fluid.sulfurdioxide.ModFluidSulfurDioxide;
+import com.pozdro.nuclearindustry.fluid.sulfurdioxide.ModFluidsSulfurDioxide;
 import com.pozdro.nuclearindustry.fluid.tritium.ModFluidTritium;
 import com.pozdro.nuclearindustry.fluid.tritium.ModFluidsTritium;
 import net.minecraft.client.Camera;
@@ -135,5 +137,7 @@ public class BaseFluidType extends  FluidType{
         ModFluidsPurifiedWater.register(eventBus);
         ModFluidHydrochloricAcid.register(eventBus);
         ModFluidsHydrochloricAcid.register(eventBus);
+        ModFluidSulfurDioxide.register(eventBus);
+        ModFluidsSulfurDioxide.register(eventBus);
     }
 }

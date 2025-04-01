@@ -10,6 +10,7 @@ import com.pozdro.nuclearindustry.fluid.hydrogen.ModFluidHydrogen;
 import com.pozdro.nuclearindustry.fluid.hydrogen.ModFluidsHydrogen;
 import com.pozdro.nuclearindustry.fluid.hydrogenchloride.ModFluidsHydrogenChloride;
 import com.pozdro.nuclearindustry.fluid.purifiedwater.ModFluidsPurifiedWater;
+import com.pozdro.nuclearindustry.fluid.sulfurdioxide.ModFluidsSulfurDioxide;
 import com.pozdro.nuclearindustry.fluid.tritium.ModFluidsTritium;
 import com.pozdro.nuclearindustry.items.custom.UpgradeItem;
 import net.minecraft.world.item.BucketItem;
@@ -77,6 +78,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> HYDROCHLORICACID_BUCKET = ITEMS.register("hydrochloricacid_bucket",
             ()->new BucketItem(ModFluidsHydrochloricAcid.SOURCE_HYDROCHLORICACID,new Item.Properties().stacksTo(1)
+                    .tab(ModCreativeTabs.MAIN_TAB).craftRemainder(Items.BUCKET)));
+
+    public static final RegistryObject<Item> SULFURDIOXIDE_BUCKET = ITEMS.register("sulfurdioxide_bucket",
+            ()->new BucketItem(ModFluidsSulfurDioxide.SOURCE_SULFURDIOXIDE,new Item.Properties().stacksTo(1)
                     .tab(ModCreativeTabs.MAIN_TAB).craftRemainder(Items.BUCKET)));
 
     public static void register(IEventBus ebus){ITEMS.register(ebus);}

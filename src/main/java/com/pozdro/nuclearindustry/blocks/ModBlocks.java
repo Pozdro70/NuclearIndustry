@@ -14,6 +14,7 @@ import com.pozdro.nuclearindustry.fluid.hydrogen.ModFluidsHydrogen;
 import com.pozdro.nuclearindustry.fluid.hydrogenchloride.ModFluidHydrogenChloride;
 import com.pozdro.nuclearindustry.fluid.hydrogenchloride.ModFluidsHydrogenChloride;
 import com.pozdro.nuclearindustry.fluid.purifiedwater.ModFluidsPurifiedWater;
+import com.pozdro.nuclearindustry.fluid.sulfurdioxide.ModFluidsSulfurDioxide;
 import com.pozdro.nuclearindustry.fluid.tritium.ModFluidsTritium;
 import com.pozdro.nuclearindustry.items.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -106,6 +107,8 @@ public class ModBlocks {
 
     public static final RegistryObject<LiquidBlock> HYDROCHLORICACID_FLUID_BLOCK = BLOCKS.register("hydrochloricacid_fluid_block",
             ()->new LiquidBlock(ModFluidsHydrochloricAcid.SOURCE_HYDROCHLORICACID, BlockBehaviour.Properties.copy(Blocks.WATER)));
+    public static final RegistryObject<LiquidBlock> SULFURDIOXIDE_FLUID_BLOCK = BLOCKS.register("sulfurdioxide_fluid_block",
+            ()->new LiquidBlock(ModFluidsSulfurDioxide.SOURCE_SULFURDIOXIDE, BlockBehaviour.Properties.copy(Blocks.WATER)));
 
 
     private static <T extends  Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab){
