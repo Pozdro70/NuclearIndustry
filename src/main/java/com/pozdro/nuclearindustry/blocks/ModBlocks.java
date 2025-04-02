@@ -65,6 +65,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> DEEPSLATE_SULDFUR_ORE = registerBlock("deepslate_sulfur_ore",
             ()->new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()),
             ModCreativeTabs.MAIN_TAB);
+    public static final RegistryObject<Block> CHEMICALMIXER = registerBlock("chemicalmixer",
+            ()->new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()),
+            ModCreativeTabs.MAIN_TAB);
 
     public static final RegistryObject<Block> ELECHAMBER = registerBlock("elechamber",
             ()->new ElechamberBlock(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops().noOcclusion()),
@@ -124,3 +127,30 @@ public class ModBlocks {
 
     public static void register(IEventBus ebus){BLOCKS.register(ebus);}
 }
+
+/*
+
+{
+  "variants": {
+    "facing=north": {
+      "model": "nuclearindustry:block/chemicalmixer",
+      "y": 90
+
+    },
+    "facing=south": {
+      "model": "nuclearindustry:block/chemicalmixer",
+      "y": 270
+
+    },
+    "facing=west": {
+      "model": "nuclearindustry:block/chemicalmixer"
+
+    },
+    "facing=east": {
+      "model": "nuclearindustry:block/chemicalmixer",
+      "y": 180
+
+    }
+  }
+}
+ */

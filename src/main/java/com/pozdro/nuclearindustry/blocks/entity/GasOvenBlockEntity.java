@@ -427,7 +427,6 @@ public class GasOvenBlockEntity extends BlockEntity implements MenuProvider {
 
             pEntity.itemHandler.extractItem(2,1,false);
 
-
             pEntity.ENERGY_STORAGE.extractEnergy(200,false);
             pEntity.resetProgress();
         }

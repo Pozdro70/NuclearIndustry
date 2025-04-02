@@ -28,6 +28,7 @@
   "block.nuclearindustry.still": "Still",
   "block.nuclearindustry.gasoven": "Gas Oven",
   "block.nuclearindustry.absorber": "Absorber",
+  "block.nuclearindustry.chemicalmixer": "Chemical Mixer",
 
   "fluid_type.nuclearindustry.heavywater_fluid":"Heavy Water",
   "fluid_type.nuclearindustry.purifiedwater_fluid":"Purified Water",
