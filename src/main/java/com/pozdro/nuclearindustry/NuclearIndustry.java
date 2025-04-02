@@ -31,6 +31,7 @@ import org.slf4j.Logger;
 @Mod(NuclearIndustry.MODID)
 public class NuclearIndustry
 {
+    //test
     // Define mod id in a common place for everything to reference
     public static final String MODID = "nuclearindustry";
     // Directly reference a slf4j logger
