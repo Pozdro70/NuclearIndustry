@@ -1,5 +1,23 @@
 {
   "variants": {
-    "": {"model": "nuclearindustry:block/chemicalmixer"}
+    "facing=north": {
+      "model": "nuclearindustry:block/chemicalmixer",
+      "y": 180
+
+    },
+    "facing=south": {
+      "model": "nuclearindustry:block/chemicalmixer"
+
+
+    },
+    "facing=west": {
+      "model": "nuclearindustry:block/chemicalmixer",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "nuclearindustry:block/chemicalmixer",
+      "y": 270
+
+    }
   }
 }

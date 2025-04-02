@@ -2,10 +2,7 @@ package com.pozdro.nuclearindustry.blocks;
 
 import com.pozdro.nuclearindustry.ModCreativeTabs;
 import com.pozdro.nuclearindustry.NuclearIndustry;
-import com.pozdro.nuclearindustry.blocks.custom.AbsorberBlock;
-import com.pozdro.nuclearindustry.blocks.custom.ElechamberBlock;
-import com.pozdro.nuclearindustry.blocks.custom.GasOvenBlock;
-import com.pozdro.nuclearindustry.blocks.custom.StillBlock;
+import com.pozdro.nuclearindustry.blocks.custom.*;
 import com.pozdro.nuclearindustry.fluid.chlorine.ModFluidsChloride;
 import com.pozdro.nuclearindustry.fluid.deuterium.ModFluidsDeuterium;
 import com.pozdro.nuclearindustry.fluid.heavywater.ModFluidsHeavyWater;
@@ -66,7 +63,7 @@ public class ModBlocks {
             ()->new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()),
             ModCreativeTabs.MAIN_TAB);
     public static final RegistryObject<Block> CHEMICALMIXER = registerBlock("chemicalmixer",
-            ()->new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()),
+            ()->new ChemicalMixerBlock(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()),
             ModCreativeTabs.MAIN_TAB);
 
     public static final RegistryObject<Block> ELECHAMBER = registerBlock("elechamber",
@@ -127,30 +124,3 @@ public class ModBlocks {
 
     public static void register(IEventBus ebus){BLOCKS.register(ebus);}
 }
-
-/*
-
-{
-  "variants": {
-    "facing=north": {
-      "model": "nuclearindustry:block/chemicalmixer",
-      "y": 90
-
-    },
-    "facing=south": {
-      "model": "nuclearindustry:block/chemicalmixer",
-      "y": 270
-
-    },
-    "facing=west": {
-      "model": "nuclearindustry:block/chemicalmixer"
-
-    },
-    "facing=east": {
-      "model": "nuclearindustry:block/chemicalmixer",
-      "y": 180
-
-    }
-  }
-}
- */
