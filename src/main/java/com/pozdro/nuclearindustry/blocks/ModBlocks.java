@@ -40,7 +40,7 @@ public class ModBlocks {
             ModCreativeTabs.MAIN_TAB);
 
     public static final RegistryObject<Block> COPPER_COIL = registerBlock("copper_coil",
-            ()->new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()),
+            ()->new RotationalBlock(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()),
             ModCreativeTabs.MAIN_TAB);
 
 
