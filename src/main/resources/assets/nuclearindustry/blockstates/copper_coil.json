@@ -7,8 +7,6 @@
     },
     "facing=south": {
       "model": "nuclearindustry:block/copper_coil"
-
-
     },
     "facing=west": {
       "model": "nuclearindustry:block/copper_coil",

@@ -4,6 +4,7 @@ import com.pozdro.nuclearindustry.blocks.custom.ElechamberBlock;
 import com.pozdro.nuclearindustry.fluid.chlorine.ModFluidsChloride;
 import com.pozdro.nuclearindustry.fluid.heavywater.ModFluidsHeavyWater;
 import com.pozdro.nuclearindustry.fluid.hydrogen.ModFluidsHydrogen;
+import com.pozdro.nuclearindustry.fluid.hydrogenchloride.ModFluidsHydrogenChloride;
 import com.pozdro.nuclearindustry.fluid.sulfurdioxide.ModFluidsSulfurDioxide;
 import com.pozdro.nuclearindustry.items.ModItems;
 import com.pozdro.nuclearindustry.networking.ModMessages;
@@ -411,7 +412,7 @@ public class GasOvenBlockEntity extends BlockEntity implements MenuProvider {
         {
             pEntity.FLUID_TANK_IN.drain(1600, IFluidHandler.FluidAction.EXECUTE);
             pEntity.FLUID_TANK_IN1.drain(1600, IFluidHandler.FluidAction.EXECUTE);
-            pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsHeavyWater.SOURCE_HEAVYWATER.get(), 800), IFluidHandler.FluidAction.EXECUTE);
+            pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsHydrogenChloride.SOURCE_HYDROGENCHLORIDE.get(), 800), IFluidHandler.FluidAction.EXECUTE);
 
             if(pEntity.ENERGY_STORAGE.getEnergyStored()<100000-6500){
                 pEntity.ENERGY_STORAGE.receiveEnergy(6500,false);

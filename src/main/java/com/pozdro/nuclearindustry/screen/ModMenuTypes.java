@@ -20,6 +20,9 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<StillMenu>> STILL_MENU =
             registerMenuType(StillMenu::new, "still_menu");
 
+    public static final RegistryObject<MenuType<ChemicalMixerMenu>> CHEMICAL_MIXER_MENU =
+            registerMenuType(ChemicalMixerMenu::new, "chemical_mixer_menu");
+
     public static final RegistryObject<MenuType<GasOvenMenu>> GASOVEN_MENU =
             registerMenuType(GasOvenMenu::new, "gasoven_menu");
 

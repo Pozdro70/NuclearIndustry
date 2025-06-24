@@ -27,6 +27,10 @@ public class ModTags {
 
     public static class Fluids{
         public static final TagKey<Fluid> STILL_INP_FLUIDS = tag("still_inp_fluids");
+
+        public static final TagKey<Fluid> CHEMICAL_MIXER_INP_FLUIDS = tag("chemicalmixer_inp_fluids");
+        public static final TagKey<Fluid> CHEMICAL_MIXER_INP1_FLUIDS = tag("chemicalmixer_inp1_fluids");
+        public static final TagKey<Fluid> CHEMICAL_MIXER_INP2_FLUIDS = tag("chemicalmixer_inp2_fluids");
         public static final TagKey<Fluid> ELECHAMBER_INP_FLUIDS = tag("elechamber_inp_fluids");
 
         public static final TagKey<Fluid> OVEN_INP_FLUIDS = tag("oven_inp_fluids");

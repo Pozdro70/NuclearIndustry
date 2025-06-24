@@ -52,6 +52,18 @@ public class ModMessages {
                 .consumerMainThread(StillFluidSyncS2CPacket::handle)
                 .add();
 
+        net.messageBuilder(ChemicalMixerEnergySyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(ChemicalMixerEnergySyncS2CPacket::new)
+                .encoder(ChemicalMixerEnergySyncS2CPacket::toBytes)
+                .consumerMainThread(ChemicalMixerEnergySyncS2CPacket::handle)
+                .add();
+
+        net.messageBuilder(ChemicalMixerFluidSyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(ChemicalMixerFluidSyncS2CPacket::new)
+                .encoder(ChemicalMixerFluidSyncS2CPacket::toBytes)
+                .consumerMainThread(ChemicalMixerFluidSyncS2CPacket::handle)
+                .add();
+
         net.messageBuilder(GasOvenEnergySyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
                 .decoder(GasOvenEnergySyncS2CPacket::new)
                 .encoder(GasOvenEnergySyncS2CPacket::toBytes)

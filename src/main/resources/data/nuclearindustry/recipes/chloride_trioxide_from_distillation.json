@@ -1,0 +1,23 @@
+{
+  "type": "nuclearindustry:chemical_mixing",
+  "ingredients": [
+    {
+      "item": "nuclearindustry:nothing"
+    }
+  ],
+  "fluidIN": {
+    "FluidName": "nuclearindustry:sulfurdioxide_fluid",
+    "Amount": 1000
+  },
+  "fluidIN1": {
+    "FluidName": "nuclearindustry:oxygen_fluid",
+    "Amount": 1600
+  },
+  "fluidOUT": {
+    "FluidName": "nuclearindustry:sulfurtrioxide_fluid",
+    "Amount": 1000
+  },
+  "output": {
+    "item": "nuclearindustry:nothing"
+  }
+}

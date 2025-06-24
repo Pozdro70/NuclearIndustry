@@ -9,8 +9,10 @@ import com.pozdro.nuclearindustry.fluid.hydrochloricacid.ModFluidsHydrochloricAc
 import com.pozdro.nuclearindustry.fluid.hydrogen.ModFluidHydrogen;
 import com.pozdro.nuclearindustry.fluid.hydrogen.ModFluidsHydrogen;
 import com.pozdro.nuclearindustry.fluid.hydrogenchloride.ModFluidsHydrogenChloride;
+import com.pozdro.nuclearindustry.fluid.oxygen.ModFluidsOxygen;
 import com.pozdro.nuclearindustry.fluid.purifiedwater.ModFluidsPurifiedWater;
 import com.pozdro.nuclearindustry.fluid.sulfurdioxide.ModFluidsSulfurDioxide;
+import com.pozdro.nuclearindustry.fluid.sulfurtrioxide.ModFluidsSulfurTrioxide;
 import com.pozdro.nuclearindustry.fluid.tritium.ModFluidsTritium;
 import com.pozdro.nuclearindustry.items.custom.UpgradeItem;
 import net.minecraft.world.item.BucketItem;
@@ -26,6 +28,9 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, NuclearIndustry.MODID);
 
     public static final RegistryObject<Item> STEEL = ITEMS.register("steel",
+            ()->new Item(new Item.Properties().stacksTo(64).tab(ModCreativeTabs.MAIN_TAB)));
+
+    public static final RegistryObject<Item> VANADIUM_ANODE = ITEMS.register("vanadium_anode",
             ()->new Item(new Item.Properties().stacksTo(64).tab(ModCreativeTabs.MAIN_TAB)));
 
     public static final RegistryObject<Item> SALT = ITEMS.register("salt",
@@ -83,6 +88,16 @@ public class ModItems {
     public static final RegistryObject<Item> SULFURDIOXIDE_BUCKET = ITEMS.register("sulfurdioxide_bucket",
             ()->new BucketItem(ModFluidsSulfurDioxide.SOURCE_SULFURDIOXIDE,new Item.Properties().stacksTo(1)
                     .tab(ModCreativeTabs.MAIN_TAB).craftRemainder(Items.BUCKET)));
+
+    public static final RegistryObject<Item> OXYGEN_BUCKET = ITEMS.register("oxygen_bucket",
+            ()->new BucketItem(ModFluidsOxygen.SOURCE_OXYGEN,new Item.Properties().stacksTo(1)
+                    .tab(ModCreativeTabs.MAIN_TAB).craftRemainder(Items.BUCKET)));
+
+    public static final RegistryObject<Item> SULFURTRIOXIDE_BUCKET = ITEMS.register("sulfurtrioxide_bucket",
+            ()->new BucketItem(ModFluidsSulfurTrioxide.SOURCE_SULFURTRIOXIDE,new Item.Properties().stacksTo(1)
+                    .tab(ModCreativeTabs.MAIN_TAB).craftRemainder(Items.BUCKET)));
+
+
 
     public static void register(IEventBus ebus){ITEMS.register(ebus);}
 }

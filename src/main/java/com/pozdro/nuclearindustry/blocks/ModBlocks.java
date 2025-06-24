@@ -10,8 +10,11 @@ import com.pozdro.nuclearindustry.fluid.hydrochloricacid.ModFluidsHydrochloricAc
 import com.pozdro.nuclearindustry.fluid.hydrogen.ModFluidsHydrogen;
 import com.pozdro.nuclearindustry.fluid.hydrogenchloride.ModFluidHydrogenChloride;
 import com.pozdro.nuclearindustry.fluid.hydrogenchloride.ModFluidsHydrogenChloride;
+import com.pozdro.nuclearindustry.fluid.oxygen.ModFluidsOxygen;
 import com.pozdro.nuclearindustry.fluid.purifiedwater.ModFluidsPurifiedWater;
 import com.pozdro.nuclearindustry.fluid.sulfurdioxide.ModFluidsSulfurDioxide;
+import com.pozdro.nuclearindustry.fluid.sulfurtrioxide.ModFluidSulfurTrioxide;
+import com.pozdro.nuclearindustry.fluid.sulfurtrioxide.ModFluidsSulfurTrioxide;
 import com.pozdro.nuclearindustry.fluid.tritium.ModFluidsTritium;
 import com.pozdro.nuclearindustry.items.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -109,6 +112,12 @@ public class ModBlocks {
             ()->new LiquidBlock(ModFluidsHydrochloricAcid.SOURCE_HYDROCHLORICACID, BlockBehaviour.Properties.copy(Blocks.WATER)));
     public static final RegistryObject<LiquidBlock> SULFURDIOXIDE_FLUID_BLOCK = BLOCKS.register("sulfurdioxide_fluid_block",
             ()->new LiquidBlock(ModFluidsSulfurDioxide.SOURCE_SULFURDIOXIDE, BlockBehaviour.Properties.copy(Blocks.WATER)));
+
+    public static final RegistryObject<LiquidBlock> OXYGEN_FLUID_BLOCK = BLOCKS.register("oxygen_fluid_block",
+            ()->new LiquidBlock(ModFluidsOxygen.SOURCE_OXYGEN, BlockBehaviour.Properties.copy(Blocks.WATER)));
+
+    public static final RegistryObject<LiquidBlock> SULFURTRIOXIDE_FLUID_BLOCK = BLOCKS.register("sulfurtrioxide_fluid_block",
+            ()->new LiquidBlock(ModFluidsSulfurTrioxide.SOURCE_SULFURTRIOXIDE, BlockBehaviour.Properties.copy(Blocks.WATER)));
 
 
     private static <T extends  Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab){

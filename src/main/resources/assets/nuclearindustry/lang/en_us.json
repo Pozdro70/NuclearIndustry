@@ -1,5 +1,6 @@
 {
   "item.nuclearindustry.steel": "Steel ingot",
+  "item.nuclearindustry.vanadium_anode": "V2O2 Anode",
   "item.nuclearindustry.salt": "Salt",
   "item.nuclearindustry.sulfur": "Sulfur",
   "item.nuclearindustry.spodumene": "Spodumene",
@@ -16,6 +17,8 @@
   "item.nuclearindustry.chloride_bucket": "'Bucket' of Chloride",
   "item.nuclearindustry.hydrochloricacid_bucket": "'Bucket' of Hydrochloric Acid",
   "item.nuclearindustry.sulfurdioxide_bucket": "'Bucket' of Sulfur Dioxide",
+  "item.nuclearindustry.oxygen_bucket": "'Bucket' of Oxygen",
+  "item.nuclearindustry.sulfurtrioxide_bucket": "'Bucket' of Sulfur-trioxide",
 
   "block.nuclearindustry.thermal_isolator": "Thermal Isolator",
   "block.nuclearindustry.copper_coil": "Copper Coil",
@@ -39,6 +42,8 @@
   "fluid_type.nuclearindustry.hydrogenchloride_fluid":"Hydrogen Chloride",
   "fluid_type.nuclearindustry.hydrochloricacid_fluid":"Hydrochloric Acid",
   "fluid_type.nuclearindustry.sulfurdioxide_fluid":"Sulfur Dioxide",
+  "fluid_type.nuclearindustry.oxygen_fluid":"Oxygen",
+  "fluid_type.nuclearindustry.sulfurtrioxide_fluid":"Sulfur Trioxide",
 
   "itemGroup.main": "NuclearIndustry - Main",
 

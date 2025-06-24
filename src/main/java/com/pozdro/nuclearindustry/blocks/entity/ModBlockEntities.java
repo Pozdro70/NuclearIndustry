@@ -21,6 +21,11 @@ public class ModBlockEntities {
             BLOCK_ENITIES.register("still",()-> BlockEntityType.Builder.of(StillBlockEntity::new,
                     ModBlocks.STILL.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<ChemicalMixerBlockEntity>> CHEMICAL_MIXER=
+            BLOCK_ENITIES.register("chemicalmixer",()-> BlockEntityType.Builder.of(ChemicalMixerBlockEntity::new,
+                    ModBlocks.CHEMICALMIXER.get()).build(null));
+
+
     public static final RegistryObject<BlockEntityType<GasOvenBlockEntity>> GAS_OVEN=
             BLOCK_ENITIES.register("gasoven",()-> BlockEntityType.Builder.of(GasOvenBlockEntity::new,
                     ModBlocks.GAS_OVEN.get()).build(null));

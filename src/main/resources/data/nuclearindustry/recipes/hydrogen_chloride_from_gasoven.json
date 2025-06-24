@@ -10,7 +10,7 @@
     "Amount": 1600
   },
   "fluidIN2": {
-    "FluidName": "nuclearindustry:hydrogen_fluid",
+    "FluidName": "nuclearindustry:chlorine_fluid",
     "Amount": 1600
   },
   "fluidOUT": {

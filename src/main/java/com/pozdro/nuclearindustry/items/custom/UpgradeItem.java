@@ -21,7 +21,7 @@ public class UpgradeItem extends Item {
         super(pProperties);
     }
 
-    enum FilterModes{
+    public enum FilterModes{
         skipHydrogen,
         skipOxygen,
         skipHydrogenAndOxygen
@@ -49,9 +49,13 @@ public class UpgradeItem extends Item {
         pTooltipComponents.add(Component.literal("MODE: "+filterModes.toString().toUpperCase()).withStyle(ChatFormatting.AQUA));
 
         if(Screen.hasShiftDown()){
-            pTooltipComponents.add(Component.literal("THIS IS A WIP ITEM"));
+            pTooltipComponents.add(Component.literal("THIS IS STILL A WIP ITEM"));
         }
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
 
+    }
+
+    public FilterModes getUpgradeMode(){
+        return filterModes;
     }
 }
