@@ -8,6 +8,9 @@
   "item.nuclearindustry.sodium_hydroxide": "Sodium hydroxide",
   "item.nuclearindustry.nothing": "Nothing",
   "item.nuclearindustry.filter_upgrade": "Filter Upgrade",
+  "item.nuclearindustry.lithium_carbonate": "Lithium Carbonate",
+  "item.nuclearindustry.lithium_chloride": "Lithium chloride",
+
   "item.nuclearindustry.deuterium_bucket": "'Bucket' of Deuterium",
   "item.nuclearindustry.tritium_bucket": "'Bucket' of Tritium",
   "item.nuclearindustry.heavywater_bucket": "Bucket of Heavy Water",
@@ -19,6 +22,8 @@
   "item.nuclearindustry.sulfurdioxide_bucket": "'Bucket' of Sulfur Dioxide",
   "item.nuclearindustry.oxygen_bucket": "'Bucket' of Oxygen",
   "item.nuclearindustry.sulfurtrioxide_bucket": "'Bucket' of Sulfur-trioxide",
+  "item.nuclearindustry.fumingsulfuricacid_bucket": "'Bucket' of Fuming Sulfuric Acid",
+  "item.nuclearindustry.sulfuricacid_bucket": "Bucket of Sulfuric Acid",
 
   "block.nuclearindustry.thermal_isolator": "Thermal Isolator",
   "block.nuclearindustry.copper_coil": "Copper Coil",
@@ -44,8 +49,11 @@
   "fluid_type.nuclearindustry.sulfurdioxide_fluid":"Sulfur Dioxide",
   "fluid_type.nuclearindustry.oxygen_fluid":"Oxygen",
   "fluid_type.nuclearindustry.sulfurtrioxide_fluid":"Sulfur Trioxide",
+  "fluid_type.nuclearindustry.fumingsulfuricacid_fluid":"Fuming Sulfuric Acid",
+  "fluid_type.nuclearindustry.sulfuricacid_fluid":"Sulfuric Acid",
 
   "itemGroup.main": "NuclearIndustry - Main",
+  "itemGroup.fluids": "NuclearIndustry - Fluids",
 
   "nuclearindustry.tooltip.liquid.amount.with.capacity": "%s / %s mB",
   "nuclearindustry.tooltip.liquid.amount": "%s mB"

@@ -1,0 +1,23 @@
+{
+  "type": "nuclearindustry:absorber",
+  "ingredients": [
+    {
+      "item": "nuclearindustry:nothing"
+    }
+  ],
+  "fluidIN": {
+    "FluidName": "nuclearindustry:sulfurtrioxide_fluid",
+    "Amount": 1600
+  },
+  "fluidABS": {
+    "FluidName": "nuclearindustry:purifiedwater_fluid",
+    "Amount": 1000
+  },
+  "fluidOUT": {
+    "FluidName": "nuclearindustry:fumingsulfuricacid_fluid",
+    "Amount": 800
+  },
+  "output": {
+    "item": "nuclearindustry:nothing"
+  }
+}

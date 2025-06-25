@@ -5,6 +5,7 @@ import com.pozdro.nuclearindustry.NuclearIndustry;
 import com.pozdro.nuclearindustry.blocks.custom.*;
 import com.pozdro.nuclearindustry.fluid.chlorine.ModFluidsChloride;
 import com.pozdro.nuclearindustry.fluid.deuterium.ModFluidsDeuterium;
+import com.pozdro.nuclearindustry.fluid.fumingsulfuricacid.ModFluidsFumingSulfuricAcid;
 import com.pozdro.nuclearindustry.fluid.heavywater.ModFluidsHeavyWater;
 import com.pozdro.nuclearindustry.fluid.hydrochloricacid.ModFluidsHydrochloricAcid;
 import com.pozdro.nuclearindustry.fluid.hydrogen.ModFluidsHydrogen;
@@ -13,6 +14,7 @@ import com.pozdro.nuclearindustry.fluid.hydrogenchloride.ModFluidsHydrogenChlori
 import com.pozdro.nuclearindustry.fluid.oxygen.ModFluidsOxygen;
 import com.pozdro.nuclearindustry.fluid.purifiedwater.ModFluidsPurifiedWater;
 import com.pozdro.nuclearindustry.fluid.sulfurdioxide.ModFluidsSulfurDioxide;
+import com.pozdro.nuclearindustry.fluid.sulfuricacid.ModFluidsSulfuricAcid;
 import com.pozdro.nuclearindustry.fluid.sulfurtrioxide.ModFluidSulfurTrioxide;
 import com.pozdro.nuclearindustry.fluid.sulfurtrioxide.ModFluidsSulfurTrioxide;
 import com.pozdro.nuclearindustry.fluid.tritium.ModFluidsTritium;
@@ -118,6 +120,14 @@ public class ModBlocks {
 
     public static final RegistryObject<LiquidBlock> SULFURTRIOXIDE_FLUID_BLOCK = BLOCKS.register("sulfurtrioxide_fluid_block",
             ()->new LiquidBlock(ModFluidsSulfurTrioxide.SOURCE_SULFURTRIOXIDE, BlockBehaviour.Properties.copy(Blocks.WATER)));
+
+
+    public static final RegistryObject<LiquidBlock> FUMINGSULFURICACID_FLUID_BLOCK = BLOCKS.register("fumingsulfuricacid_fluid_block",
+            ()->new LiquidBlock(ModFluidsFumingSulfuricAcid.SOURCE_FUMINGSULFURICACID, BlockBehaviour.Properties.copy(Blocks.WATER)));
+
+
+    public static final RegistryObject<LiquidBlock> SULFURICACID_FLUID_BLOCK = BLOCKS.register("sulfuricacid_fluid_block",
+            ()->new LiquidBlock(ModFluidsSulfuricAcid.SOURCE_SULFURICACID, BlockBehaviour.Properties.copy(Blocks.WATER)));
 
 
     private static <T extends  Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab){

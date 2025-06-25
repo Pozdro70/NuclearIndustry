@@ -3,9 +3,11 @@ package com.pozdro.nuclearindustry.blocks.entity;
 import com.pozdro.nuclearindustry.blocks.custom.ElechamberBlock;
 import com.pozdro.nuclearindustry.fluid.chlorine.ModFluidsChloride;
 import com.pozdro.nuclearindustry.fluid.heavywater.ModFluidsHeavyWater;
+import com.pozdro.nuclearindustry.fluid.hydrochloricacid.ModFluidsHydrochloricAcid;
 import com.pozdro.nuclearindustry.fluid.hydrogen.ModFluidsHydrogen;
 import com.pozdro.nuclearindustry.fluid.hydrogenchloride.ModFluidsHydrogenChloride;
 import com.pozdro.nuclearindustry.fluid.sulfurdioxide.ModFluidsSulfurDioxide;
+import com.pozdro.nuclearindustry.fluid.sulfuricacid.ModFluidsSulfuricAcid;
 import com.pozdro.nuclearindustry.items.ModItems;
 import com.pozdro.nuclearindustry.networking.ModMessages;
 import com.pozdro.nuclearindustry.networking.packet.GasOvenEnergySyncS2CPacket;
@@ -431,6 +433,38 @@ public class GasOvenBlockEntity extends BlockEntity implements MenuProvider {
             pEntity.ENERGY_STORAGE.extractEnergy(200,false);
             pEntity.resetProgress();
         }
+        else if((ModFluidsSulfuricAcid.SOURCE_SULFURICACID.get().equals(pEntity.FLUID_TANK_IN1.getFluid().getFluid()) && ModFluidsSulfuricAcid.SOURCE_SULFURICACID.get()==pEntity.FLUID_TANK_IN.getFluid().getFluid() && (pEntity.FLUID_TANK_OUT.isEmpty() || pEntity.FLUID_TANK_OUT.getFluid()
+                .getAmount() <= 64000 - 800 && pEntity.FLUID_TANK_IN.getFluidAmount() >= 1600))||
+                pEntity.ENERGY_STORAGE.getEnergyStored() >= 200 && (pEntity.FLUID_TANK_OUT.isEmpty() || pEntity.FLUID_TANK_OUT.getFluid()
+                        .getAmount() <= 64000 - 800)){
+            pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsSulfuricAcid.SOURCE_SULFURICACID.get(), 800),
+                    IFluidHandler.FluidAction.EXECUTE);
+
+            pEntity.itemHandler.extractItem(2,1,false);
+            pEntity.itemHandler.setStackInSlot(3,new ItemStack(ModItems.LITHIUM_CARBONATE.get(),pEntity.itemHandler.getStackInSlot(3).getCount()+1));
+
+            pEntity.FLUID_TANK_IN.drain(700, IFluidHandler.FluidAction.EXECUTE);
+            pEntity.FLUID_TANK_IN1.drain(700, IFluidHandler.FluidAction.EXECUTE);
+
+            pEntity.ENERGY_STORAGE.extractEnergy(200,false);
+            pEntity.resetProgress();
+        }
+        else if(               (ModFluidsHydrochloricAcid.SOURCE_HYDROCHLORICACID.get()==pEntity.FLUID_TANK_IN1.getFluid().getFluid() && ModFluidsHydrochloricAcid.SOURCE_HYDROCHLORICACID.get()==pEntity.FLUID_TANK_IN.getFluid().getFluid() && (pEntity.FLUID_TANK_OUT.isEmpty() || pEntity.FLUID_TANK_OUT.getFluid()
+                .getAmount() <= 64000 - 800 && pEntity.FLUID_TANK_IN.getFluidAmount() >= 1600))||
+                pEntity.ENERGY_STORAGE.getEnergyStored() >= 200 && (pEntity.FLUID_TANK_OUT.isEmpty() || pEntity.FLUID_TANK_OUT.getFluid()
+                        .getAmount() <= 64000 - 800)){
+            pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsHydrochloricAcid.SOURCE_HYDROCHLORICACID.get(), 800),
+                    IFluidHandler.FluidAction.EXECUTE);
+
+            pEntity.itemHandler.extractItem(2,1,false);
+            pEntity.itemHandler.setStackInSlot(3,new ItemStack(ModItems.LITHIUM_CARBONATE.get(),pEntity.itemHandler.getStackInSlot(3).getCount()+1));
+
+            pEntity.FLUID_TANK_IN.drain(700, IFluidHandler.FluidAction.EXECUTE);
+            pEntity.FLUID_TANK_IN1.drain(700, IFluidHandler.FluidAction.EXECUTE);
+
+            pEntity.ENERGY_STORAGE.extractEnergy(200,false);
+            pEntity.resetProgress();
+        }
 
 
     }
@@ -440,8 +474,17 @@ public class GasOvenBlockEntity extends BlockEntity implements MenuProvider {
        return (ModFluidsHydrogen.SOURCE_HYDROGEN.get()==entity.FLUID_TANK_IN1.getFluid().getFluid() && ModFluidsChloride.SOURCE_CHLORIDE.get()==entity.FLUID_TANK_IN.getFluid().getFluid() && (entity.FLUID_TANK_OUT.isEmpty() || entity.FLUID_TANK_OUT.getFluid()
                .getAmount() <= 64000 - 800 && entity.FLUID_TANK_IN.getFluidAmount() >= 1600))||
                entity.ENERGY_STORAGE.getEnergyStored() >= 200 &&(entity.itemHandler.getStackInSlot(2).getItem() == ModItems.SULFUR.get() && (entity.FLUID_TANK_OUT.isEmpty() || entity.FLUID_TANK_OUT.getFluid()
-               .getAmount() <= 64000 - 800));
+               .getAmount() <= 64000 - 800)) ||
 
+               (ModFluidsSulfuricAcid.SOURCE_SULFURICACID.get()==entity.FLUID_TANK_IN1.getFluid().getFluid() && ModFluidsSulfuricAcid.SOURCE_SULFURICACID.get()==entity.FLUID_TANK_IN.getFluid().getFluid() && (entity.FLUID_TANK_OUT.isEmpty() || entity.FLUID_TANK_OUT.getFluid()
+                       .getAmount() <= 64000 - 800 && entity.FLUID_TANK_IN.getFluidAmount() >= 1600))||
+               entity.ENERGY_STORAGE.getEnergyStored() >= 200 &&(entity.itemHandler.getStackInSlot(2).getItem() == ModItems.SULFUR.get() && (entity.FLUID_TANK_OUT.isEmpty() || entity.FLUID_TANK_OUT.getFluid()
+                       .getAmount() <= 64000 - 800) )||
+
+               (ModFluidsHydrochloricAcid.SOURCE_HYDROCHLORICACID.get()==entity.FLUID_TANK_IN1.getFluid().getFluid() && ModFluidsHydrochloricAcid.SOURCE_HYDROCHLORICACID.get()==entity.FLUID_TANK_IN.getFluid().getFluid() && (entity.FLUID_TANK_OUT.isEmpty() || entity.FLUID_TANK_OUT.getFluid()
+                       .getAmount() <= 64000 - 800 && entity.FLUID_TANK_IN.getFluidAmount() >= 1600))||
+               entity.ENERGY_STORAGE.getEnergyStored() >= 200 &&(entity.itemHandler.getStackInSlot(2).getItem() == ModItems.SULFUR.get() && (entity.FLUID_TANK_OUT.isEmpty() || entity.FLUID_TANK_OUT.getFluid()
+                       .getAmount() <= 64000 - 800) );
     }
     //do tad DO ZMIANY!!!!
 

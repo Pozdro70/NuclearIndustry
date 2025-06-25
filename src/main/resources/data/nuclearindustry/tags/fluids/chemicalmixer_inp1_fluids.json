@@ -1,5 +1,6 @@
 {
   "values": [
-    "nuclearindustry:oxygen_fluid"
+    "nuclearindustry:oxygen_fluid",
+    "nuclearindustry:purifiedwater_fluid"
   ]
 }

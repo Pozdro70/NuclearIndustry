@@ -8,6 +8,8 @@ import com.pozdro.nuclearindustry.fluid.chlorine.ModFluidChloride;
 import com.pozdro.nuclearindustry.fluid.chlorine.ModFluidsChloride;
 import com.pozdro.nuclearindustry.fluid.deuterium.ModFluidDeuterium;
 import com.pozdro.nuclearindustry.fluid.deuterium.ModFluidsDeuterium;
+import com.pozdro.nuclearindustry.fluid.fumingsulfuricacid.ModFluidFumingSulfuricAcid;
+import com.pozdro.nuclearindustry.fluid.fumingsulfuricacid.ModFluidsFumingSulfuricAcid;
 import com.pozdro.nuclearindustry.fluid.heavywater.ModFluidHeavyWater;
 import com.pozdro.nuclearindustry.fluid.heavywater.ModFluidsHeavyWater;
 import com.pozdro.nuclearindustry.fluid.hydrochloricacid.ModFluidHydrochloricAcid;
@@ -22,6 +24,8 @@ import com.pozdro.nuclearindustry.fluid.purifiedwater.ModFluidPurifiedWater;
 import com.pozdro.nuclearindustry.fluid.purifiedwater.ModFluidsPurifiedWater;
 import com.pozdro.nuclearindustry.fluid.sulfurdioxide.ModFluidSulfurDioxide;
 import com.pozdro.nuclearindustry.fluid.sulfurdioxide.ModFluidsSulfurDioxide;
+import com.pozdro.nuclearindustry.fluid.sulfuricacid.ModFluidSulfuricAcid;
+import com.pozdro.nuclearindustry.fluid.sulfuricacid.ModFluidsSulfuricAcid;
 import com.pozdro.nuclearindustry.fluid.sulfurtrioxide.ModFluidSulfurTrioxide;
 import com.pozdro.nuclearindustry.fluid.sulfurtrioxide.ModFluidsSulfurTrioxide;
 import com.pozdro.nuclearindustry.fluid.tritium.ModFluidTritium;
@@ -147,5 +151,9 @@ public class BaseFluidType extends  FluidType{
         ModFluidsOxygen.register(eventBus);
         ModFluidSulfurTrioxide.register(eventBus);
         ModFluidsSulfurTrioxide.register(eventBus);
+        ModFluidFumingSulfuricAcid.register(eventBus);
+        ModFluidsFumingSulfuricAcid.register(eventBus);
+        ModFluidSulfuricAcid.register(eventBus);
+        ModFluidsSulfuricAcid.register(eventBus);
     }
 }

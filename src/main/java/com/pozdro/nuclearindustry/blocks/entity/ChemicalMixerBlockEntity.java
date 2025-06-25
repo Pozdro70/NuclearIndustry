@@ -1,8 +1,11 @@
 package com.pozdro.nuclearindustry.blocks.entity;
 
 import com.pozdro.nuclearindustry.blocks.custom.ChemicalMixerBlock;
+import com.pozdro.nuclearindustry.fluid.fumingsulfuricacid.ModFluidsFumingSulfuricAcid;
 import com.pozdro.nuclearindustry.fluid.oxygen.ModFluidsOxygen;
+import com.pozdro.nuclearindustry.fluid.purifiedwater.ModFluidsPurifiedWater;
 import com.pozdro.nuclearindustry.fluid.sulfurdioxide.ModFluidsSulfurDioxide;
+import com.pozdro.nuclearindustry.fluid.sulfuricacid.ModFluidsSulfuricAcid;
 import com.pozdro.nuclearindustry.fluid.sulfurtrioxide.ModFluidsSulfurTrioxide;
 import com.pozdro.nuclearindustry.networking.ModMessages;
 import com.pozdro.nuclearindustry.networking.packet.ChemicalMixerEnergySyncS2CPacket;
@@ -385,6 +388,24 @@ public class ChemicalMixerBlockEntity extends BlockEntity implements MenuProvide
             else{
                 pEntity.progress=0;
                 pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsSulfurTrioxide.SOURCE_SULFURTRIOXIDE.get(),pEntity.FLUID_TANK_OUT.getFluidAmount()+800), IFluidHandler.FluidAction.EXECUTE);
+                pEntity.FLUID_TANK_IN.drain(800, IFluidHandler.FluidAction.EXECUTE);
+                pEntity.FLUID_TANK_IN1.drain(800, IFluidHandler.FluidAction.EXECUTE);
+            }
+            setChanged(level,blockPos,state);
+        }
+
+        if(pEntity.getEnergyStorage().getEnergyStored() >= ENERGY_REQ* pEntity.maxProgress &&
+                pEntity.FLUID_TANK_OUT.getFluidAmount()+800 < pEntity.FLUID_TANK_OUT.getCapacity() &&
+                pEntity.FLUID_TANK_IN.getFluid().equals(new FluidStack(ModFluidsFumingSulfuricAcid.SOURCE_FUMINGSULFURICACID.get(), 800)) &&
+                pEntity.FLUID_TANK_IN1.getFluid().equals(new FluidStack(ModFluidsPurifiedWater.SOURCE_PURIFIEDWATER.get(), 800)))
+        {
+            if(pEntity.progress<pEntity.maxProgress){
+                pEntity.progress++;
+                pEntity.getEnergyStorage().extractEnergy(ENERGY_REQ,false);
+            }
+            else{
+                pEntity.progress=0;
+                pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsSulfuricAcid.SOURCE_SULFURICACID.get(),pEntity.FLUID_TANK_OUT.getFluidAmount()+800), IFluidHandler.FluidAction.EXECUTE);
                 pEntity.FLUID_TANK_IN.drain(800, IFluidHandler.FluidAction.EXECUTE);
                 pEntity.FLUID_TANK_IN1.drain(800, IFluidHandler.FluidAction.EXECUTE);
             }

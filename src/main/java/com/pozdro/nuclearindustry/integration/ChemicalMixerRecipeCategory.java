@@ -71,7 +71,6 @@ public class ChemicalMixerRecipeCategory implements IRecipeCategory<ChemicalMixe
                 .setFluidRenderer(64000,false,14,63);
 
         /*
-
         builder.addSlot(RecipeIngredientRole.INPUT,43-4,8-4).addIngredients(ForgeTypes.FLUID_STACK,
                     List.of(recipe.getFluidStackIN()))
             .setFluidRenderer(64000,false,14,63);

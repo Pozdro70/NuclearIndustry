@@ -1,5 +1,7 @@
 {
   "values": [
-    "nuclearindustry:hydrogen_fluid"
+    "nuclearindustry:hydrogen_fluid",
+    "nuclearindustry:sulfuricacid_fluid",
+    "nuclearindustry:hydrochloricacid_fluid"
   ]
 }

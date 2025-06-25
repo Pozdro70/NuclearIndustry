@@ -3,11 +3,14 @@ package com.pozdro.nuclearindustry.blocks.entity;
 import com.pozdro.nuclearindustry.blocks.custom.AbsorberBlock;
 import com.pozdro.nuclearindustry.blocks.custom.ElechamberBlock;
 import com.pozdro.nuclearindustry.fluid.chlorine.ModFluidsChloride;
+import com.pozdro.nuclearindustry.fluid.fumingsulfuricacid.ModFluidsFumingSulfuricAcid;
 import com.pozdro.nuclearindustry.fluid.heavywater.ModFluidsHeavyWater;
 import com.pozdro.nuclearindustry.fluid.hydrochloricacid.ModFluidsHydrochloricAcid;
 import com.pozdro.nuclearindustry.fluid.hydrogen.ModFluidsHydrogen;
 import com.pozdro.nuclearindustry.fluid.hydrogenchloride.ModFluidsHydrogenChloride;
 import com.pozdro.nuclearindustry.fluid.purifiedwater.ModFluidsPurifiedWater;
+import com.pozdro.nuclearindustry.fluid.sulfuricacid.ModFluidsSulfuricAcid;
+import com.pozdro.nuclearindustry.fluid.sulfurtrioxide.ModFluidsSulfurTrioxide;
 import com.pozdro.nuclearindustry.items.ModItems;
 import com.pozdro.nuclearindustry.networking.ModMessages;
 import com.pozdro.nuclearindustry.networking.packet.AbsorberEnergySyncS2CPacket;
@@ -406,10 +409,16 @@ public class AbsorberBlockEntity extends BlockEntity implements MenuProvider {
 
     private static void craftItem(AbsorberBlockEntity pEntity) {
 
+        if(ModFluidsHydrogenChloride.SOURCE_HYDROGENCHLORIDE.get()==pEntity.FLUID_TANK_IN.getFluid().getFluid()){
+            pEntity.FLUID_TANK_IN.drain(1600, IFluidHandler.FluidAction.EXECUTE);
+            pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsHydrochloricAcid.SOURCE_HYDROCHLORICACID.get(), 800),
+                    IFluidHandler.FluidAction.EXECUTE);
+        } else if (ModFluidsSulfurTrioxide.SOURCE_SULFURTRIOXIDE.get()==pEntity.FLUID_TANK_IN.getFluid().getFluid()) {
+            pEntity.FLUID_TANK_IN.drain(1600, IFluidHandler.FluidAction.EXECUTE);
+            pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsFumingSulfuricAcid.SOURCE_FUMINGSULFURICACID.get(), 800),
+                    IFluidHandler.FluidAction.EXECUTE);
+        }
 
-        pEntity.FLUID_TANK_IN.drain(1600, IFluidHandler.FluidAction.EXECUTE);
-        pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsHydrochloricAcid.SOURCE_HYDROCHLORICACID.get(), 800),
-                IFluidHandler.FluidAction.EXECUTE);
 
         if(pEntity.ENERGY_STORAGE.getEnergyStored()<100000-6500){
             pEntity.ENERGY_STORAGE.receiveEnergy(6500,false);
@@ -419,7 +428,11 @@ public class AbsorberBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private static boolean hasCorrectRecipe(AbsorberBlockEntity entity) {
-        return ModFluidsHydrogenChloride.SOURCE_HYDROGENCHLORIDE.get()==entity.FLUID_TANK_IN.getFluid().getFluid() && ModFluidsPurifiedWater.SOURCE_PURIFIEDWATER.get()==entity.FLUID_TANK_ABSORBATION.getFluid().getFluid() && (entity.FLUID_TANK_OUT.isEmpty() || entity.FLUID_TANK_OUT.getFluid()
+        return 
+        ModFluidsHydrogenChloride.SOURCE_HYDROGENCHLORIDE.get()==entity.FLUID_TANK_IN.getFluid().getFluid() && ModFluidsPurifiedWater.SOURCE_PURIFIEDWATER.get()==entity.FLUID_TANK_ABSORBATION.getFluid().getFluid() && (entity.FLUID_TANK_OUT.isEmpty() || entity.FLUID_TANK_OUT.getFluid()
+                .getAmount() <= 64000 - 800 && entity.FLUID_TANK_IN.getFluidAmount() >= 1600 && entity.FLUID_TANK_ABSORBATION.getFluidAmount() >= 1600)
+        ||
+        ModFluidsSulfurTrioxide.SOURCE_SULFURTRIOXIDE.get()==entity.FLUID_TANK_IN.getFluid().getFluid() && ModFluidsPurifiedWater.SOURCE_PURIFIEDWATER.get()==entity.FLUID_TANK_ABSORBATION.getFluid().getFluid() && (entity.FLUID_TANK_OUT.isEmpty() || entity.FLUID_TANK_OUT.getFluid()
                 .getAmount() <= 64000 - 800 && entity.FLUID_TANK_IN.getFluidAmount() >= 1600 && entity.FLUID_TANK_ABSORBATION.getFluidAmount() >= 1600);
 
     }
