@@ -405,7 +405,7 @@ public class ChemicalMixerBlockEntity extends BlockEntity implements MenuProvide
             }
             else{
                 pEntity.progress=0;
-                pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsSulfuricAcid.SOURCE_SULFURICACID.get(),pEntity.FLUID_TANK_OUT.getFluidAmount()+800), IFluidHandler.FluidAction.EXECUTE);
+                pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsSulfuricAcid.SOURCE_SULFURICACID.get(),800), IFluidHandler.FluidAction.EXECUTE);
                 pEntity.FLUID_TANK_IN.drain(800, IFluidHandler.FluidAction.EXECUTE);
                 pEntity.FLUID_TANK_IN1.drain(800, IFluidHandler.FluidAction.EXECUTE);
             }
