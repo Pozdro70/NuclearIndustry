@@ -9,13 +9,12 @@ import com.pozdro.nuclearindustry.fluid.fumingsulfuricacid.ModFluidsFumingSulfur
 import com.pozdro.nuclearindustry.fluid.heavywater.ModFluidsHeavyWater;
 import com.pozdro.nuclearindustry.fluid.hydrochloricacid.ModFluidsHydrochloricAcid;
 import com.pozdro.nuclearindustry.fluid.hydrogen.ModFluidsHydrogen;
-import com.pozdro.nuclearindustry.fluid.hydrogenchloride.ModFluidHydrogenChloride;
 import com.pozdro.nuclearindustry.fluid.hydrogenchloride.ModFluidsHydrogenChloride;
 import com.pozdro.nuclearindustry.fluid.oxygen.ModFluidsOxygen;
 import com.pozdro.nuclearindustry.fluid.purifiedwater.ModFluidsPurifiedWater;
+import com.pozdro.nuclearindustry.fluid.sodiumhydroxidesolution.ModFluidsSodiumHydroxideSolution;
 import com.pozdro.nuclearindustry.fluid.sulfurdioxide.ModFluidsSulfurDioxide;
 import com.pozdro.nuclearindustry.fluid.sulfuricacid.ModFluidsSulfuricAcid;
-import com.pozdro.nuclearindustry.fluid.sulfurtrioxide.ModFluidSulfurTrioxide;
 import com.pozdro.nuclearindustry.fluid.sulfurtrioxide.ModFluidsSulfurTrioxide;
 import com.pozdro.nuclearindustry.fluid.tritium.ModFluidsTritium;
 import com.pozdro.nuclearindustry.items.ModItems;
@@ -44,6 +43,10 @@ public class ModBlocks {
             ()->new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()),
             ModCreativeTabs.MAIN_TAB);
 
+    public static final RegistryObject<Block> ORE_WASHING_PLANT = registerBlock("orewashingplant",
+            ()->new OreWashingPlantBlock(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()),
+            ModCreativeTabs.MAIN_TAB);
+
     public static final RegistryObject<Block> COPPER_COIL = registerBlock("copper_coil",
             ()->new RotationalBlock(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()),
             ModCreativeTabs.MAIN_TAB);
@@ -58,6 +61,10 @@ public class ModBlocks {
             ModCreativeTabs.MAIN_TAB);
 
     public static final RegistryObject<Block> SULFUR_ORE = registerBlock("sulfur_ore",
+            ()->new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()),
+            ModCreativeTabs.MAIN_TAB);
+
+    public static final RegistryObject<Block> SYLVINITE_ORE = registerBlock("sylvinite_ore",
             ()->new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()),
             ModCreativeTabs.MAIN_TAB);
 
@@ -128,6 +135,9 @@ public class ModBlocks {
 
     public static final RegistryObject<LiquidBlock> SULFURICACID_FLUID_BLOCK = BLOCKS.register("sulfuricacid_fluid_block",
             ()->new LiquidBlock(ModFluidsSulfuricAcid.SOURCE_SULFURICACID, BlockBehaviour.Properties.copy(Blocks.WATER)));
+
+    public static final RegistryObject<LiquidBlock> SODIUMHYDROXIDESOLUTION_FLUID_BLOCK = BLOCKS.register("sodiumhydroxidesolution_fluid_block",
+            ()->new LiquidBlock(ModFluidsSodiumHydroxideSolution.SOURCE_SODIUMHYDROXIDESOLUTION, BlockBehaviour.Properties.copy(Blocks.WATER)));
 
 
     private static <T extends  Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab){

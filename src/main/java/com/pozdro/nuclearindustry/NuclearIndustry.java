@@ -79,6 +79,8 @@ public class NuclearIndustry
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+
+
             ItemBlockRenderTypes.setRenderLayer(ModFluidsDeuterium.SOURCE_DEUTERIUM.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModFluidsDeuterium.FLOWING_DEUTERIUM.get(),RenderType.translucent());
 
@@ -97,6 +99,7 @@ public class NuclearIndustry
             MenuScreens.register(ModMenuTypes.CHEMICAL_MIXER_MENU.get(), ChemicalMixerScreen::new);
             MenuScreens.register(ModMenuTypes.GASOVEN_MENU.get(), GasOvenScreen::new);
             MenuScreens.register(ModMenuTypes.ABSORBER_MENU.get(), AbsorberScreen::new);
+            MenuScreens.register(ModMenuTypes.ORE_WASHING_PLANT_MENU.get(), OreWashingPlantScreen::new);
         }
     }
 }

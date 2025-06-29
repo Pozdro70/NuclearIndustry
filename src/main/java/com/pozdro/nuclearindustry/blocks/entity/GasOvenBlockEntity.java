@@ -5,6 +5,8 @@ import com.pozdro.nuclearindustry.fluid.chlorine.ModFluidsChloride;
 import com.pozdro.nuclearindustry.fluid.hydrochloricacid.ModFluidsHydrochloricAcid;
 import com.pozdro.nuclearindustry.fluid.hydrogen.ModFluidsHydrogen;
 import com.pozdro.nuclearindustry.fluid.hydrogenchloride.ModFluidsHydrogenChloride;
+import com.pozdro.nuclearindustry.fluid.purifiedwater.ModFluidsPurifiedWater;
+import com.pozdro.nuclearindustry.fluid.sodiumhydroxidesolution.ModFluidsSodiumHydroxideSolution;
 import com.pozdro.nuclearindustry.fluid.sulfuricacid.ModFluidsSulfuricAcid;
 import com.pozdro.nuclearindustry.items.ModItems;
 import com.pozdro.nuclearindustry.networking.ModMessages;
@@ -330,68 +332,8 @@ public class GasOvenBlockEntity extends BlockEntity implements MenuProvider {
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
-    public static void AddRecipe(GasOvenBlockEntity pEntity, FluidStack fluidIn1, FluidStack fluidIn2, FluidStack fluidOut, ItemStack itemIn, ItemStack itemOut){
-        if(pEntity.getEnergyStorage().getEnergyStored() >= ENERGY_REQ* pEntity.maxProgress &&
-                pEntity.FLUID_TANK_OUT.getFluidAmount()+800 < pEntity.FLUID_TANK_OUT.getCapacity() &&
-                pEntity.FLUID_TANK_IN.getFluid().equals(fluidIn1) &&
-                pEntity.FLUID_TANK_IN1.getFluid().equals(fluidIn2)
-                &&      pEntity.itemHandler.getStackInSlot(2).getItem()==itemIn.getItem()&&
-                pEntity.itemHandler.getStackInSlot(3).getCount()<itemOut.getItem().getMaxStackSize()&&
-                (pEntity.FLUID_TANK_OUT.getFluid().getFluid().equals(fluidOut.getFluid())||pEntity.FLUID_TANK_OUT.isEmpty())
-        )
-        {
-            if(pEntity.progress<pEntity.maxProgress){
-                pEntity.progress++;
-                pEntity.getEnergyStorage().extractEnergy(ENERGY_REQ,false);
-            }
-            else{
-                pEntity.progress=0;
-                pEntity.FLUID_TANK_OUT.fill(fluidOut, IFluidHandler.FluidAction.EXECUTE);
-
-                pEntity.FLUID_TANK_IN.drain(800, IFluidHandler.FluidAction.EXECUTE);
-                pEntity.FLUID_TANK_IN1.drain(800, IFluidHandler.FluidAction.EXECUTE);
-
-                pEntity.itemHandler.setStackInSlot(2,new ItemStack(itemIn.getItem(),pEntity.itemHandler.getStackInSlot(2).getCount()-1));
-                pEntity.itemHandler.setStackInSlot(3,new ItemStack(itemOut.getItem(),pEntity.itemHandler.getStackInSlot(3).getCount()+1));
-
-            }
-            setChanged(pEntity.level,pEntity.getBlockPos(),pEntity.getBlockState());
-        }
-        else {
-            pEntity.progress=0;
-        }
-    }
-    public static void AddRecipe(GasOvenBlockEntity pEntity, FluidStack fluidIn1, FluidStack fluidIn2, FluidStack fluidOut){
-        if(pEntity.getEnergyStorage().getEnergyStored() >= ENERGY_REQ* pEntity.maxProgress &&
-                pEntity.FLUID_TANK_OUT.getFluidAmount()+800 < pEntity.FLUID_TANK_OUT.getCapacity() &&
-                pEntity.FLUID_TANK_IN.getFluid().equals(fluidIn1) &&
-                pEntity.FLUID_TANK_IN1.getFluid().equals(fluidIn2) &&
-                (pEntity.FLUID_TANK_OUT.getFluid().getFluid().equals(fluidOut.getFluid())||pEntity.FLUID_TANK_OUT.isEmpty())
-        )
-        {
-            if(pEntity.progress<pEntity.maxProgress){
-                pEntity.progress++;
-                pEntity.getEnergyStorage().extractEnergy(ENERGY_REQ,false);
-            }
-            else{
-                pEntity.progress=0;
-                pEntity.FLUID_TANK_OUT.fill(fluidOut, IFluidHandler.FluidAction.EXECUTE);
-
-                pEntity.FLUID_TANK_IN.drain(800, IFluidHandler.FluidAction.EXECUTE);
-                pEntity.FLUID_TANK_IN1.drain(800, IFluidHandler.FluidAction.EXECUTE);
-
-            }
-            setChanged(pEntity.level,pEntity.getBlockPos(),pEntity.getBlockState());
-        }
-        else {
-            pEntity.progress=0;
-        }
-    }
-
     public static void tick(Level level, BlockPos blockPos, BlockState state, GasOvenBlockEntity pEntity) {
-        if (level.isClientSide()) {
-            return;
-        }
+        if (level.isClientSide()) {return;}
         SimpleContainer inventory = new SimpleContainer(pEntity.itemHandler.getSlots());
         Optional<GasOvenRecipe> recipe = level.getRecipeManager().getRecipeFor(GasOvenRecipe.Type.INSTANCE, inventory, level);
 
@@ -427,31 +369,114 @@ public class GasOvenBlockEntity extends BlockEntity implements MenuProvider {
         //funkcjonalność
 
         //LITHIUM CARBONATE RECIPE
-        AddRecipe(pEntity,
-                new FluidStack(ModFluidsSulfuricAcid.SOURCE_SULFURICACID.get(),1600), //INPUT FLUID
-                new FluidStack(ModFluidsSulfuricAcid.SOURCE_SULFURICACID.get(),1600),//INPUT1 FLUID
-                new FluidStack(ModFluidsSulfuricAcid.SOURCE_SULFURICACID.get(),800),//OUTPUT FLUID
-                new ItemStack(ModItems.SPODUMENE.get(),1),//INPUT ITEM
-                new ItemStack(ModItems.LITHIUM_CARBONATE.get(),1)//OUTPUT ITEM
-        );
+
+        if(pEntity.getEnergyStorage().getEnergyStored() >= ENERGY_REQ* pEntity.maxProgress &&
+                pEntity.FLUID_TANK_OUT.getFluidAmount()+800 < pEntity.FLUID_TANK_OUT.getCapacity() &&
+                pEntity.FLUID_TANK_IN.getFluid().getFluid().equals(new FluidStack(ModFluidsSulfuricAcid.SOURCE_SULFURICACID.get(),1600).getFluid()) &&
+                pEntity.FLUID_TANK_IN1.getFluid().getFluid().equals(new FluidStack(ModFluidsSulfuricAcid.SOURCE_SULFURICACID.get(),1600).getFluid())
+                &&      pEntity.itemHandler.getStackInSlot(2).getItem()==new ItemStack(ModItems.SPODUMENE.get(),1).getItem()&&
+                pEntity.itemHandler.getStackInSlot(3).getCount()<new ItemStack(ModItems.LITHIUM_CARBONATE.get(),1).getItem().getMaxStackSize()&&
+                (pEntity.FLUID_TANK_OUT.getFluid().getFluid().equals(new FluidStack(ModFluidsSulfuricAcid.SOURCE_SULFURICACID.get(),800).getFluid())||pEntity.FLUID_TANK_OUT.isEmpty())
+        )
+        {
+            if(pEntity.progress<pEntity.maxProgress){
+                pEntity.progress++;
+                pEntity.getEnergyStorage().extractEnergy(ENERGY_REQ,false);
+            }
+            else{
+                pEntity.progress=0;
+                pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsSulfuricAcid.SOURCE_SULFURICACID.get(),800), IFluidHandler.FluidAction.EXECUTE);
+
+                pEntity.FLUID_TANK_IN.drain(800, IFluidHandler.FluidAction.EXECUTE);
+                pEntity.FLUID_TANK_IN1.drain(800, IFluidHandler.FluidAction.EXECUTE);
+
+                pEntity.itemHandler.setStackInSlot(2,new ItemStack(new ItemStack(ModItems.SPODUMENE.get(),1).getItem(),pEntity.itemHandler.getStackInSlot(2).getCount()-1));
+                pEntity.itemHandler.setStackInSlot(3,new ItemStack(new ItemStack(ModItems.LITHIUM_CARBONATE.get(),1).getItem(),pEntity.itemHandler.getStackInSlot(3).getCount()+1));
+
+            }
+            setChanged(pEntity.level,pEntity.getBlockPos(),pEntity.getBlockState());
+        }
+        else
 
         //HYDROGEN CHLORIDE RECIPE
-        AddRecipe(pEntity,
-                new FluidStack(ModFluidsHydrogen.SOURCE_HYDROGEN.get(),800),
-                new FluidStack(ModFluidsChloride.SOURCE_CHLORIDE.get(),800),
-                new FluidStack(ModFluidsHydrogenChloride.SOURCE_HYDROGENCHLORIDE.get(),1600)
-        );
 
+        if(pEntity.getEnergyStorage().getEnergyStored() >= ENERGY_REQ* pEntity.maxProgress &&
+                pEntity.FLUID_TANK_OUT.getFluidAmount()+800 < pEntity.FLUID_TANK_OUT.getCapacity() &&
+                pEntity.FLUID_TANK_IN1.getFluid().getFluid().equals(new FluidStack(ModFluidsHydrogen.SOURCE_HYDROGEN.get(),800).getFluid()) &&
+                pEntity.FLUID_TANK_IN.getFluid().getFluid().equals(new FluidStack(ModFluidsChloride.SOURCE_CHLORIDE.get(),800).getFluid())
+                && (pEntity.FLUID_TANK_OUT.getFluid().getFluid().equals(new FluidStack(ModFluidsHydrogenChloride.SOURCE_HYDROGENCHLORIDE.get(),1600).getFluid())
+                        ||pEntity.FLUID_TANK_OUT.isEmpty())
+        )
+        {
+            if(pEntity.progress<pEntity.maxProgress){
+                pEntity.progress++;
+                pEntity.getEnergyStorage().extractEnergy(ENERGY_REQ,false);
+            }
+            else{
+                pEntity.progress=0;
+                pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsHydrogenChloride.SOURCE_HYDROGENCHLORIDE.get(),1600), IFluidHandler.FluidAction.EXECUTE);
+
+                pEntity.FLUID_TANK_IN.drain(800, IFluidHandler.FluidAction.EXECUTE);
+                pEntity.FLUID_TANK_IN1.drain(800, IFluidHandler.FluidAction.EXECUTE);
+
+            }
+            setChanged(pEntity.level,pEntity.getBlockPos(),pEntity.getBlockState());
+        }
         //LITHIUM CHLORIDE RECIPE
-        AddRecipe(pEntity,
-                new FluidStack(ModFluidsHydrochloricAcid.SOURCE_HYDROCHLORICACID.get(),1600),
-                new FluidStack(ModFluidsHydrochloricAcid.SOURCE_HYDROCHLORICACID.get(),1600),
-                new FluidStack(ModFluidsHydrochloricAcid.SOURCE_HYDROCHLORICACID.get(),800),
-                new ItemStack(ModItems.LITHIUM_CARBONATE.get(),1),
-                new ItemStack(ModItems.LITHIUM_CHLORIDE.get(),1)
-        );
+        else if(pEntity.getEnergyStorage().getEnergyStored() >= ENERGY_REQ* pEntity.maxProgress &&
+                pEntity.FLUID_TANK_OUT.getFluidAmount()+800 < pEntity.FLUID_TANK_OUT.getCapacity() &&
+                pEntity.FLUID_TANK_IN.getFluid().getFluid().equals(new FluidStack(ModFluidsHydrochloricAcid.SOURCE_HYDROCHLORICACID.get(),1600).getFluid()) &&
+                pEntity.FLUID_TANK_IN1.getFluid().getFluid().equals(new FluidStack(ModFluidsHydrochloricAcid.SOURCE_HYDROCHLORICACID.get(),1600).getFluid())
+                &&      pEntity.itemHandler.getStackInSlot(2).getItem()==new ItemStack(ModItems.LITHIUM_CARBONATE.get(),1).getItem()&&
+                pEntity.itemHandler.getStackInSlot(3).getCount()<new ItemStack(ModItems.LITHIUM_CHLORIDE.get(),1).getItem().getMaxStackSize()&&
+                (pEntity.FLUID_TANK_OUT.getFluid().getFluid().equals(new FluidStack(ModFluidsHydrochloricAcid.SOURCE_HYDROCHLORICACID.get(),800).getFluid())||pEntity.FLUID_TANK_OUT.isEmpty())
+        )
+        {
+            if(pEntity.progress<pEntity.maxProgress){
+                pEntity.progress++;
+                pEntity.getEnergyStorage().extractEnergy(ENERGY_REQ,false);
+            }
+            else{
+                pEntity.progress=0;
+                pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsHydrochloricAcid.SOURCE_HYDROCHLORICACID.get(),800), IFluidHandler.FluidAction.EXECUTE);
 
+                pEntity.FLUID_TANK_IN.drain(800, IFluidHandler.FluidAction.EXECUTE);
+                pEntity.FLUID_TANK_IN1.drain(800, IFluidHandler.FluidAction.EXECUTE);
 
+                pEntity.itemHandler.setStackInSlot(2,new ItemStack(new ItemStack(ModItems.LITHIUM_CARBONATE.get(),1).getItem(),pEntity.itemHandler.getStackInSlot(2).getCount()-1));
+                pEntity.itemHandler.setStackInSlot(3,new ItemStack(new ItemStack(ModItems.LITHIUM_CHLORIDE.get(),1).getItem(),pEntity.itemHandler.getStackInSlot(3).getCount()+1));
+
+            }
+            setChanged(pEntity.level,pEntity.getBlockPos(),pEntity.getBlockState());
+        }
+
+        //SODIUM HYDROXIDE SOLUTION RECIPE
+        else if(pEntity.getEnergyStorage().getEnergyStored() >= ENERGY_REQ* pEntity.maxProgress &&
+                pEntity.FLUID_TANK_OUT.getFluidAmount()+800 < pEntity.FLUID_TANK_OUT.getCapacity() &&
+                pEntity.FLUID_TANK_IN.getFluid().getFluid().equals(new FluidStack(ModFluidsPurifiedWater.SOURCE_PURIFIEDWATER.get(),400).getFluid()) &&
+                pEntity.FLUID_TANK_IN1.getFluid().getFluid().equals(new FluidStack(ModFluidsPurifiedWater.SOURCE_PURIFIEDWATER.get(),400).getFluid())
+                &&      pEntity.itemHandler.getStackInSlot(2).getItem()==new ItemStack(ModItems.SODIUM_HYDROXIDE.get(),1).getItem()&&
+                (pEntity.FLUID_TANK_OUT.getFluid().getFluid().equals(new FluidStack(ModFluidsSodiumHydroxideSolution.SOURCE_SODIUMHYDROXIDESOLUTION.get(),800).getFluid())||pEntity.FLUID_TANK_OUT.isEmpty())
+        )
+        {
+            if(pEntity.progress<pEntity.maxProgress){
+                pEntity.progress++;
+                pEntity.getEnergyStorage().extractEnergy(ENERGY_REQ,false);
+            }
+            else{
+                pEntity.progress=0;
+                pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsSodiumHydroxideSolution.SOURCE_SODIUMHYDROXIDESOLUTION.get(),800), IFluidHandler.FluidAction.EXECUTE);
+
+                pEntity.FLUID_TANK_IN.drain(800, IFluidHandler.FluidAction.EXECUTE);
+                pEntity.FLUID_TANK_IN1.drain(800, IFluidHandler.FluidAction.EXECUTE);
+
+                pEntity.itemHandler.setStackInSlot(2,new ItemStack(new ItemStack(ModItems.SODIUM_HYDROXIDE.get(),1).getItem(),pEntity.itemHandler.getStackInSlot(2).getCount()-1));
+            }
+            setChanged(pEntity.level,pEntity.getBlockPos(),pEntity.getBlockState());
+        }
+        else {
+            pEntity.progress=0;
+        }
     }
 
 

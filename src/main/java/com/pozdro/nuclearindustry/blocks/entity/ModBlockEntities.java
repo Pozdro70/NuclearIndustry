@@ -34,6 +34,10 @@ public class ModBlockEntities {
             BLOCK_ENITIES.register("absorber",()-> BlockEntityType.Builder.of(AbsorberBlockEntity::new,
                     ModBlocks.ABSORBER.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<OreWashingPlantBlockEntity>> ORE_WASHING_PLANT=
+            BLOCK_ENITIES.register("orewashingplant",()-> BlockEntityType.Builder.of(OreWashingPlantBlockEntity::new,
+                    ModBlocks.ORE_WASHING_PLANT.get()).build(null));
+
     public static void register(IEventBus eventBus){
         BLOCK_ENITIES.register(eventBus);
     }

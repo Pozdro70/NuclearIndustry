@@ -52,6 +52,7 @@ public class JEINuclearIndustryPlugin implements IModPlugin {
 
         registration.addRecipeCategories(new
                 AbsorberRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+
     }
 
     @Override
@@ -72,6 +73,7 @@ public class JEINuclearIndustryPlugin implements IModPlugin {
 
         List<AbsorberRecipe> recipesAbsorber = rm.getAllRecipesFor(AbsorberRecipe.Type.INSTANCE);
         registration.addRecipes(ABSORBTION,recipesAbsorber );
+
     }
 
 }

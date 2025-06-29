@@ -22,6 +22,8 @@ import com.pozdro.nuclearindustry.fluid.oxygen.ModFluidOxygen;
 import com.pozdro.nuclearindustry.fluid.oxygen.ModFluidsOxygen;
 import com.pozdro.nuclearindustry.fluid.purifiedwater.ModFluidPurifiedWater;
 import com.pozdro.nuclearindustry.fluid.purifiedwater.ModFluidsPurifiedWater;
+import com.pozdro.nuclearindustry.fluid.sodiumhydroxidesolution.ModFluidSodiumHydroxideSolution;
+import com.pozdro.nuclearindustry.fluid.sodiumhydroxidesolution.ModFluidsSodiumHydroxideSolution;
 import com.pozdro.nuclearindustry.fluid.sulfurdioxide.ModFluidSulfurDioxide;
 import com.pozdro.nuclearindustry.fluid.sulfurdioxide.ModFluidsSulfurDioxide;
 import com.pozdro.nuclearindustry.fluid.sulfuricacid.ModFluidSulfuricAcid;
@@ -155,5 +157,7 @@ public class BaseFluidType extends  FluidType{
         ModFluidsFumingSulfuricAcid.register(eventBus);
         ModFluidSulfuricAcid.register(eventBus);
         ModFluidsSulfuricAcid.register(eventBus);
+        ModFluidSodiumHydroxideSolution.register(eventBus);
+        ModFluidsSodiumHydroxideSolution.register(eventBus);
     }
 }

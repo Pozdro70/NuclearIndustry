@@ -87,6 +87,19 @@ public class ModMessages {
                 .encoder(AbsorberFluidSyncS2CPacket::toBytes)
                 .consumerMainThread(AbsorberFluidSyncS2CPacket::handle)
                 .add();
+
+            net.messageBuilder(OreWashingPlantEnergySyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(OreWashingPlantEnergySyncS2CPacket::new)
+                .encoder(OreWashingPlantEnergySyncS2CPacket::toBytes)
+                .consumerMainThread(OreWashingPlantEnergySyncS2CPacket::handle)
+                .add();
+
+        net.messageBuilder(OreWashingPlantFluidSyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(OreWashingPlantFluidSyncS2CPacket::new)
+                .encoder(OreWashingPlantFluidSyncS2CPacket::toBytes)
+                .consumerMainThread(OreWashingPlantFluidSyncS2CPacket::handle)
+                .add();
+
     }
 
     public static <MSG> void sendToServer(MSG message) {

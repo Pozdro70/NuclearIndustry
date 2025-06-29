@@ -2,6 +2,8 @@
   "item.nuclearindustry.steel": "Steel ingot",
   "item.nuclearindustry.vanadium_anode": "V2O2 Anode",
   "item.nuclearindustry.salt": "Salt",
+  "item.nuclearindustry.raw_sylvinite": "Raw Sylvinite",
+  "item.nuclearindustry.refined_sylvinite": "Refined Sylvinite",
   "item.nuclearindustry.sulfur": "Sulfur",
   "item.nuclearindustry.spodumene": "Spodumene",
   "item.nuclearindustry.raw_spodumene": "Raw Spodumene",
@@ -24,9 +26,11 @@
   "item.nuclearindustry.sulfurtrioxide_bucket": "'Bucket' of Sulfur-trioxide",
   "item.nuclearindustry.fumingsulfuricacid_bucket": "'Bucket' of Fuming Sulfuric Acid",
   "item.nuclearindustry.sulfuricacid_bucket": "Bucket of Sulfuric Acid",
+  "item.nuclearindustry.sodiumhydroxidesolution_bucket": "Bucket of Sodium Hydroxide Solution",
 
   "block.nuclearindustry.thermal_isolator": "Thermal Isolator",
   "block.nuclearindustry.copper_coil": "Copper Coil",
+  "block.nuclearindustry.sylvinite_ore": "Sylvinite ore",
   "block.nuclearindustry.machine_hull": "Machine Hull",
   "block.nuclearindustry.spodumene_ore": "Stone Spodumene Ore",
   "block.nuclearindustry.sulfur_ore": "Stone Sulfur Ore",
@@ -37,6 +41,7 @@
   "block.nuclearindustry.gasoven": "Gas Oven",
   "block.nuclearindustry.absorber": "Absorber",
   "block.nuclearindustry.chemicalmixer": "Chemical Mixer",
+  "block.nuclearindustry.orewashingplant": "Ore Washing Plant",
 
   "fluid_type.nuclearindustry.heavywater_fluid":"Heavy Water",
   "fluid_type.nuclearindustry.purifiedwater_fluid":"Purified Water",
@@ -51,6 +56,7 @@
   "fluid_type.nuclearindustry.sulfurtrioxide_fluid":"Sulfur Trioxide",
   "fluid_type.nuclearindustry.fumingsulfuricacid_fluid":"Fuming Sulfuric Acid",
   "fluid_type.nuclearindustry.sulfuricacid_fluid":"Sulfuric Acid",
+  "fluid_type.nuclearindustry.sodium_hydroxide_solution_fluid":"Sodium Hydroxide Solution",
 
   "itemGroup.main": "NuclearIndustry - Main",
   "itemGroup.fluids": "NuclearIndustry - Fluids",

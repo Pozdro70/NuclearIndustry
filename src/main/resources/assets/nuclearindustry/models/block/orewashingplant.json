@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "nuclearindustry:block/machine_hull",
+    "up": "nuclearindustry:block/machine_hull",
+    "north": "nuclearindustry:block/machine_hull",
+    "east": "nuclearindustry:block/machine_hull",
+    "south": "nuclearindustry:block/machine_hull",
+    "west": "nuclearindustry:block/orewashingplant",
+    "particle": "nuclearindustry:block/machine_hull"
+  }
+}

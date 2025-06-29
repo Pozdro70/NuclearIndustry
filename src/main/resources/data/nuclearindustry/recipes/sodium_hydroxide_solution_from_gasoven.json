@@ -1,0 +1,23 @@
+{
+  "type": "nuclearindustry:gasoven",
+  "ingredients": [
+    {
+      "item": "nuclearindustry:sodium_hydroxide"
+    }
+  ],
+  "fluidIN": {
+    "FluidName": "nuclearindustry:purifiedwater_fluid",
+    "Amount": 800
+  },
+  "fluidIN2": {
+    "FluidName": "nuclearindustry:purifiedwater_fluid",
+    "Amount": 800
+  },
+  "fluidOUT": {
+    "FluidName": "nuclearindustry:sodium_hydroxide_solution_fluid",
+    "Amount": 1600
+  },
+  "output": {
+    "item": "nuclearindustry:nothing"
+  }
+}

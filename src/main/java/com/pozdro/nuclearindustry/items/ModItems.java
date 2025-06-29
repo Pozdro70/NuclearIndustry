@@ -12,6 +12,7 @@ import com.pozdro.nuclearindustry.fluid.hydrogen.ModFluidsHydrogen;
 import com.pozdro.nuclearindustry.fluid.hydrogenchloride.ModFluidsHydrogenChloride;
 import com.pozdro.nuclearindustry.fluid.oxygen.ModFluidsOxygen;
 import com.pozdro.nuclearindustry.fluid.purifiedwater.ModFluidsPurifiedWater;
+import com.pozdro.nuclearindustry.fluid.sodiumhydroxidesolution.ModFluidsSodiumHydroxideSolution;
 import com.pozdro.nuclearindustry.fluid.sulfurdioxide.ModFluidsSulfurDioxide;
 import com.pozdro.nuclearindustry.fluid.sulfuricacid.ModFluidsSulfuricAcid;
 import com.pozdro.nuclearindustry.fluid.sulfurtrioxide.ModFluidsSulfurTrioxide;
@@ -49,8 +50,15 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_SPODUMENE = ITEMS.register("raw_spodumene",
             ()->new Item(new Item.Properties().stacksTo(64).tab(ModCreativeTabs.MAIN_TAB)));
 
+    public static final RegistryObject<Item> RAW_SYLVINITE = ITEMS.register("raw_sylvinite",
+            ()->new Item(new Item.Properties().stacksTo(64).tab(ModCreativeTabs.MAIN_TAB)));
+
+    public static final RegistryObject<Item> REFINED_SYLVINITE = ITEMS.register("refined_sylvinite",
+            ()->new Item(new Item.Properties().stacksTo(64).tab(ModCreativeTabs.MAIN_TAB)));
+
     public static final RegistryObject<Item> SODIUM_HYDROXIDE = ITEMS.register("sodium_hydroxide",
             ()->new Item(new Item.Properties().stacksTo(64).tab(ModCreativeTabs.MAIN_TAB)));
+
 
     public static final RegistryObject<Item> LITHIUM_CHLORIDE = ITEMS.register("lithium_chloride",
             ()->new Item(new Item.Properties().stacksTo(64).tab(ModCreativeTabs.MAIN_TAB)));
@@ -109,6 +117,9 @@ public class ModItems {
                     .tab(ModCreativeTabs.FLUIDS_TAB).craftRemainder(Items.BUCKET)));
     public static final RegistryObject<Item> SULFURICACID_BUCKET = ITEMS.register("sulfuricacid_bucket",
             ()->new BucketItem(ModFluidsSulfuricAcid.SOURCE_SULFURICACID,new Item.Properties().stacksTo(1)
+                    .tab(ModCreativeTabs.FLUIDS_TAB).craftRemainder(Items.BUCKET)));
+   public static final RegistryObject<Item> SODIUMHYDROXIDESOLUTION_BUCKET = ITEMS.register("sodiumhydroxidesolution_bucket",
+            ()->new BucketItem(ModFluidsSodiumHydroxideSolution.SOURCE_SODIUMHYDROXIDESOLUTION,new Item.Properties().stacksTo(1)
                     .tab(ModCreativeTabs.FLUIDS_TAB).craftRemainder(Items.BUCKET)));
 
 
