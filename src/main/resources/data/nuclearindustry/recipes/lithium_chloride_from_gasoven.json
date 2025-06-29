@@ -1,0 +1,23 @@
+{
+  "type": "nuclearindustry:gasoven",
+  "ingredients": [
+    {
+      "item": "nuclearindustry:lithium_carbonate"
+    }
+  ],
+  "fluidIN": {
+    "FluidName": "nuclearindustry:hydrochloricacid_fluid",
+    "Amount": 1600
+  },
+  "fluidIN2": {
+    "FluidName": "nuclearindustry:hydrochloricacid_fluid",
+    "Amount": 1600
+  },
+  "fluidOUT": {
+    "FluidName": "nuclearindustry:hydrochloricacid_fluid",
+    "Amount": 800
+  },
+  "output": {
+    "item": "nuclearindustry:lithium_chloride"
+  }
+}

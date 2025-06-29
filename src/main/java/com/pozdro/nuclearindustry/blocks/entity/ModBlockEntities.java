@@ -21,6 +21,11 @@ public class ModBlockEntities {
             BLOCK_ENITIES.register("still",()-> BlockEntityType.Builder.of(StillBlockEntity::new,
                     ModBlocks.STILL.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<ChemicalMixerBlockEntity>> CHEMICAL_MIXER=
+            BLOCK_ENITIES.register("chemicalmixer",()-> BlockEntityType.Builder.of(ChemicalMixerBlockEntity::new,
+                    ModBlocks.CHEMICALMIXER.get()).build(null));
+
+
     public static final RegistryObject<BlockEntityType<GasOvenBlockEntity>> GAS_OVEN=
             BLOCK_ENITIES.register("gasoven",()-> BlockEntityType.Builder.of(GasOvenBlockEntity::new,
                     ModBlocks.GAS_OVEN.get()).build(null));
@@ -28,6 +33,10 @@ public class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<AbsorberBlockEntity>> ABSORBER=
             BLOCK_ENITIES.register("absorber",()-> BlockEntityType.Builder.of(AbsorberBlockEntity::new,
                     ModBlocks.ABSORBER.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<OreWashingPlantBlockEntity>> ORE_WASHING_PLANT=
+            BLOCK_ENITIES.register("orewashingplant",()-> BlockEntityType.Builder.of(OreWashingPlantBlockEntity::new,
+                    ModBlocks.ORE_WASHING_PLANT.get()).build(null));
 
     public static void register(IEventBus eventBus){
         BLOCK_ENITIES.register(eventBus);

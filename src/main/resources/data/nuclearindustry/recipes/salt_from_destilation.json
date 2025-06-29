@@ -10,7 +10,7 @@
     "Amount": 1000
   },
   "fluidOUT": {
-    "FluidName": "minecraft:water",
+    "FluidName": "nuclearindustry:purifiedwater_fluid",
     "Amount": 300
   },
   "output": {

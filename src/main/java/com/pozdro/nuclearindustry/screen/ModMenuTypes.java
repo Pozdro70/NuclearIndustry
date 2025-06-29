@@ -20,11 +20,17 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<StillMenu>> STILL_MENU =
             registerMenuType(StillMenu::new, "still_menu");
 
+    public static final RegistryObject<MenuType<ChemicalMixerMenu>> CHEMICAL_MIXER_MENU =
+            registerMenuType(ChemicalMixerMenu::new, "chemical_mixer_menu");
+
     public static final RegistryObject<MenuType<GasOvenMenu>> GASOVEN_MENU =
             registerMenuType(GasOvenMenu::new, "gasoven_menu");
 
     public static final RegistryObject<MenuType<AbsorberMenu>> ABSORBER_MENU =
             registerMenuType(AbsorberMenu::new, "absorber_menu");
+
+    public static final RegistryObject<MenuType<OreWashingPlantMenu>> ORE_WASHING_PLANT_MENU =
+            registerMenuType(OreWashingPlantMenu::new, "ore_washing_plant_menu");
 
 
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory,

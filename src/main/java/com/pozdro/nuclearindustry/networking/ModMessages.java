@@ -52,6 +52,18 @@ public class ModMessages {
                 .consumerMainThread(StillFluidSyncS2CPacket::handle)
                 .add();
 
+        net.messageBuilder(ChemicalMixerEnergySyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(ChemicalMixerEnergySyncS2CPacket::new)
+                .encoder(ChemicalMixerEnergySyncS2CPacket::toBytes)
+                .consumerMainThread(ChemicalMixerEnergySyncS2CPacket::handle)
+                .add();
+
+        net.messageBuilder(ChemicalMixerFluidSyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(ChemicalMixerFluidSyncS2CPacket::new)
+                .encoder(ChemicalMixerFluidSyncS2CPacket::toBytes)
+                .consumerMainThread(ChemicalMixerFluidSyncS2CPacket::handle)
+                .add();
+
         net.messageBuilder(GasOvenEnergySyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
                 .decoder(GasOvenEnergySyncS2CPacket::new)
                 .encoder(GasOvenEnergySyncS2CPacket::toBytes)
@@ -75,6 +87,19 @@ public class ModMessages {
                 .encoder(AbsorberFluidSyncS2CPacket::toBytes)
                 .consumerMainThread(AbsorberFluidSyncS2CPacket::handle)
                 .add();
+
+            net.messageBuilder(OreWashingPlantEnergySyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(OreWashingPlantEnergySyncS2CPacket::new)
+                .encoder(OreWashingPlantEnergySyncS2CPacket::toBytes)
+                .consumerMainThread(OreWashingPlantEnergySyncS2CPacket::handle)
+                .add();
+
+        net.messageBuilder(OreWashingPlantFluidSyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(OreWashingPlantFluidSyncS2CPacket::new)
+                .encoder(OreWashingPlantFluidSyncS2CPacket::toBytes)
+                .consumerMainThread(OreWashingPlantFluidSyncS2CPacket::handle)
+                .add();
+
     }
 
     public static <MSG> void sendToServer(MSG message) {

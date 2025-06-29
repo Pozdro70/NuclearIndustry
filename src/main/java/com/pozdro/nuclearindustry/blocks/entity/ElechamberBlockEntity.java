@@ -4,7 +4,9 @@ import com.pozdro.nuclearindustry.blocks.custom.ElechamberBlock;
 import com.pozdro.nuclearindustry.fluid.chlorine.ModFluidsChloride;
 import com.pozdro.nuclearindustry.fluid.heavywater.ModFluidsHeavyWater;
 import com.pozdro.nuclearindustry.fluid.hydrogen.ModFluidsHydrogen;
+import com.pozdro.nuclearindustry.fluid.oxygen.ModFluidsOxygen;
 import com.pozdro.nuclearindustry.items.ModItems;
+import com.pozdro.nuclearindustry.items.custom.UpgradeItem;
 import com.pozdro.nuclearindustry.networking.ModMessages;
 import com.pozdro.nuclearindustry.networking.packet.ElechamberEnergySyncS2CPacket;
 import com.pozdro.nuclearindustry.networking.packet.ElechamberFluidSyncS2CPacket;
@@ -372,16 +374,14 @@ public class ElechamberBlockEntity extends BlockEntity implements MenuProvider {
 
 
             if(hasManualRecipes(pEntity)){
-                if(ModItems.FILTER_UPGRADE.get() == pEntity.itemHandler.getStackInSlot(1).getItem()) {
-                    if(pEntity.itemHandler.getStackInSlot(2).getItem() == ModItems.SALT.get()&&canInsertAmountIntoOutputSlot(inventory)
-                            &&canInsertItemIntoOutputSlot(inventory,new ItemStack(ModItems.SODIUM_HYDROXIDE.get(),1))){
+
+                if(pEntity.itemHandler.getStackInSlot(1).getItem() instanceof UpgradeItem filter) {
+
+                    if (filter.getUpgradeMode()==UpgradeItem.FilterModes.skipHydrogen) {
                         pEntity.FLUID_TANK_IN.drain(1600, IFluidHandler.FluidAction.EXECUTE);
-                        pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsChloride.SOURCE_CHLORIDE.get(), 800), IFluidHandler.FluidAction.EXECUTE);
-                        pEntity.itemHandler.setStackInSlot(3,new ItemStack(ModItems.SODIUM_HYDROXIDE.get(),
-                                pEntity.itemHandler.getStackInSlot(3).getCount()+1));
-                        pEntity.resetProgress();
-                    }
-                    else {
+                        pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsOxygen.SOURCE_OXYGEN.get(), 800), IFluidHandler.FluidAction.EXECUTE);
+
+                    } else {
                         pEntity.FLUID_TANK_IN.drain(1600, IFluidHandler.FluidAction.EXECUTE);
                         pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsHeavyWater.SOURCE_HEAVYWATER.get(), 800), IFluidHandler.FluidAction.EXECUTE);
 
@@ -391,10 +391,15 @@ public class ElechamberBlockEntity extends BlockEntity implements MenuProvider {
 
                 }
                 else{
-                    pEntity.FLUID_TANK_IN.drain(1600, IFluidHandler.FluidAction.EXECUTE);
-                    pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsHydrogen.SOURCE_HYDROGEN.get(), 1000), IFluidHandler.FluidAction.EXECUTE);
-
-                    pEntity.resetProgress();
+                    if(pEntity.itemHandler.getStackInSlot(2).getItem() == ModItems.SALT.get()&&canInsertAmountIntoOutputSlot(inventory)
+                            &&canInsertItemIntoOutputSlot(inventory,new ItemStack(ModItems.SODIUM_HYDROXIDE.get(),1))) {
+                        pEntity.FLUID_TANK_IN.drain(1600, IFluidHandler.FluidAction.EXECUTE);
+                        pEntity.FLUID_TANK_OUT.fill(new FluidStack(ModFluidsChloride.SOURCE_CHLORIDE.get(), 800), IFluidHandler.FluidAction.EXECUTE);
+                        pEntity.itemHandler.setStackInSlot(3, new ItemStack(ModItems.SODIUM_HYDROXIDE.get(),
+                                pEntity.itemHandler.getStackInSlot(3).getCount() + 1));
+                        pEntity.itemHandler.extractItem(2,1,false);
+                        pEntity.resetProgress();
+                    }
                 }
 
             }

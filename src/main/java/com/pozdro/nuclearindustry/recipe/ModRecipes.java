@@ -15,6 +15,8 @@ public class ModRecipes {
             SERIALIZERS.register("electrolysis", () -> ElechamberRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<StillRecipe>> STILL_SERIALIZER =
             SERIALIZERS.register("distillation", () -> StillRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<ChemicalMixerRecipe>> CHEMICAL_MIXER_SERIALIZER =
+            SERIALIZERS.register("chemical_mixing", () -> ChemicalMixerRecipe.Serializer.INSTANCE);
 
     public static final RegistryObject<RecipeSerializer<GasOvenRecipe>> GAS_OVEN_SERIALIZER =
             SERIALIZERS.register("gasoven", () -> GasOvenRecipe.Serializer.INSTANCE);

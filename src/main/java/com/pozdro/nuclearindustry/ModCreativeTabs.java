@@ -12,4 +12,10 @@ public class ModCreativeTabs {
             return new ItemStack(ModItems.FILTER_UPGRADE.get());
         }
     };
+    public static final CreativeModeTab FLUIDS_TAB = new CreativeModeTab("fluids") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(ModItems.HYDROGEN_BUCKET.get());
+        }
+    };
 }

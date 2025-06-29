@@ -1,5 +1,21 @@
 {
   "variants": {
-    "": {"model": "nuclearindustry:block/copper_coil"}
+    "facing=north": {
+      "model": "nuclearindustry:block/copper_coil",
+      "y": 180
+
+    },
+    "facing=south": {
+      "model": "nuclearindustry:block/copper_coil"
+    },
+    "facing=west": {
+      "model": "nuclearindustry:block/copper_coil",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "nuclearindustry:block/copper_coil",
+      "y": 270
+
+    }
   }
 }
