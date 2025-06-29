@@ -1,4 +1,4 @@
-## this mod is in pre-indev! it is not playable YET
+## this mod is still in alpha faze! it is not playable YET
 
 # NuclearIndustry
 Nuclear Industry is a mod for Minecraft 1.19.2 that adds crazy nuclear technology
