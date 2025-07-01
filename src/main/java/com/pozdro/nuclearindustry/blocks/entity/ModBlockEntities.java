@@ -17,6 +17,10 @@ public class ModBlockEntities {
             BLOCK_ENITIES.register("elechamber",()-> BlockEntityType.Builder.of(ElechamberBlockEntity::new,
                     ModBlocks.ELECHAMBER.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<CentrifugeBlockEntity>> CENTRIFUGE=
+            BLOCK_ENITIES.register("centrifuge",()-> BlockEntityType.Builder.of(CentrifugeBlockEntity::new,
+                    ModBlocks.CENTRIFUGE.get()).build(null));
+
     public static final RegistryObject<BlockEntityType<StillBlockEntity>> STILL=
             BLOCK_ENITIES.register("still",()-> BlockEntityType.Builder.of(StillBlockEntity::new,
                     ModBlocks.STILL.get()).build(null));

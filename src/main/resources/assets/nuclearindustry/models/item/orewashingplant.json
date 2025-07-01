@@ -1,3 +1,6 @@
 {
-  "parent": "nuclearindustry:block/orewashingplant"
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "nuclearindustry:item/blockitem/orewashingplantmain"
+  }
 }

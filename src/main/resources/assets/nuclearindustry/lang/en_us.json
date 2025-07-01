@@ -42,6 +42,7 @@
   "block.nuclearindustry.absorber": "Absorber",
   "block.nuclearindustry.chemicalmixer": "Chemical Mixer",
   "block.nuclearindustry.orewashingplant": "Ore Washing Plant",
+  "block.nuclearindustry.centrifuge": "Centrifuge",
 
   "fluid_type.nuclearindustry.heavywater_fluid":"Heavy Water",
   "fluid_type.nuclearindustry.purifiedwater_fluid":"Purified Water",
